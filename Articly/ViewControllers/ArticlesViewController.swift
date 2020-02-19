@@ -29,6 +29,6 @@ private func confirgureSearch() {
 
 extension ArticlesViewController: UISearchBarDelegate {
 func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-  
+  viewModel?.search(query: searchBar.text!)
 }
 }

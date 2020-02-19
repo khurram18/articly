@@ -16,8 +16,8 @@
 		205DCC7723FD055A00AD452A /* ArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCC7523FD055A00AD452A /* ArticleService.swift */; };
 		205DCC7A23FD05AD00AD452A /* RestArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCC7923FD05AD00AD452A /* RestArticleService.swift */; };
 		205DCC7B23FD05AD00AD452A /* RestArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCC7923FD05AD00AD452A /* RestArticleService.swift */; };
-		205DCC7D23FD06CB00AD452A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCC7C23FD06CB00AD452A /* Article.swift */; };
-		205DCC7E23FD06CB00AD452A /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCC7C23FD06CB00AD452A /* Article.swift */; };
+		205DCC7D23FD06CB00AD452A /* ApiArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCC7C23FD06CB00AD452A /* ApiArticle.swift */; };
+		205DCC7E23FD06CB00AD452A /* ApiArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCC7C23FD06CB00AD452A /* ApiArticle.swift */; };
 		20B8ECCD23FD0DA300E8D360 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECCC23FD0DA300E8D360 /* Router.swift */; };
 		20B8ECCE23FD0DA300E8D360 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECCC23FD0DA300E8D360 /* Router.swift */; };
 		20B8ECD023FD107A00E8D360 /* config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECCF23FD107A00E8D360 /* config.swift */; };
@@ -57,7 +57,7 @@
 		205DCC6D23FD039A00AD452A /* NetworkClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkClient.swift; sourceTree = "<group>"; };
 		205DCC7523FD055A00AD452A /* ArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleService.swift; sourceTree = "<group>"; };
 		205DCC7923FD05AD00AD452A /* RestArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestArticleService.swift; sourceTree = "<group>"; };
-		205DCC7C23FD06CB00AD452A /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		205DCC7C23FD06CB00AD452A /* ApiArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiArticle.swift; sourceTree = "<group>"; };
 		20B8ECCC23FD0DA300E8D360 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		20B8ECCF23FD107A00E8D360 /* config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = config.swift; sourceTree = "<group>"; };
 		20B8ECD523FD10BE00E8D360 /* QueryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryItem.swift; sourceTree = "<group>"; };
@@ -153,7 +153,7 @@
 		205DCC7F23FD06D700AD452A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				205DCC7C23FD06CB00AD452A /* Article.swift */,
+				205DCC7C23FD06CB00AD452A /* ApiArticle.swift */,
 				20B8ECE023FD270700E8D360 /* Meta.swift */,
 				20B8ECD823FD185500E8D360 /* NetworkError.swift */,
 				20B8ECEB23FD355C00E8D360 /* SearchResponse.swift */,
@@ -287,7 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				205DCC7D23FD06CB00AD452A /* Article.swift in Sources */,
+				205DCC7D23FD06CB00AD452A /* ApiArticle.swift in Sources */,
 				20B8ECD923FD185500E8D360 /* NetworkError.swift in Sources */,
 				205DCC7623FD055A00AD452A /* ArticleService.swift in Sources */,
 				20B8ECCD23FD0DA300E8D360 /* Router.swift in Sources */,
@@ -316,7 +316,7 @@
 				20B8ECD123FD107A00E8D360 /* config.swift in Sources */,
 				20B8ECCE23FD0DA300E8D360 /* Router.swift in Sources */,
 				20B8ECDA23FD185500E8D360 /* NetworkError.swift in Sources */,
-				205DCC7E23FD06CB00AD452A /* Article.swift in Sources */,
+				205DCC7E23FD06CB00AD452A /* ApiArticle.swift in Sources */,
 				20B8ECDC23FD1E6C00E8D360 /* defaultExpectation.swift in Sources */,
 				20B8ECDF23FD268400E8D360 /* ServerResponse.swift in Sources */,
 				20B8ECD723FD10BE00E8D360 /* QueryItem.swift in Sources */,

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct Article {
+public struct ApiArticle {
   
 let abstract: String
 let webUrl: String
@@ -26,7 +26,7 @@ init(abstract: String, webUrl: String, leadParagraph: String, publishedDate: Dat
   
 } // class Article
 
-extension Article: Decodable {
+extension ApiArticle: Decodable {
 enum Keys: String, CodingKey {
   case abstract
   case webUrl = "web_url"

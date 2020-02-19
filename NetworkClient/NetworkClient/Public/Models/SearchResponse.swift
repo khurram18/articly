@@ -9,6 +9,6 @@
 import Foundation
 
 public struct SearchResponse {
-let articles: [Article]
-let meta: Meta
+public let articles: [ApiArticle]
+public let meta: Meta
 }

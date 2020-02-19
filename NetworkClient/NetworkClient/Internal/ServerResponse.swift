@@ -14,5 +14,5 @@ let response: Response
 
 struct Response: Decodable {
 let meta: Meta
-let docs: [Article]
+let docs: [ApiArticle]
 }
