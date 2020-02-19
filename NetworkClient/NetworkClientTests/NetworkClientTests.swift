@@ -16,7 +16,7 @@ override func setUp() {
   articleService = RestArticleService()
 }
 
-func testGetArticless() {
+func testGetArticles() {
   let exp = defaultExpectation()
   articleService?.search(query: "Ocean", page: 0) { result in
     switch result {

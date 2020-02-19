@@ -16,19 +16,21 @@ func search(query: String, page: Int, completion: @escaping (Result<SearchRespon
   do {
     let request = try Router.searchArticles(query: query, pageNumber: page).urlRequest()
     let task = URLSession.shared.dataTask(with: request) {data, response, error in
+      let result: Result<SearchResponse, Error>
       if let error = error {
-        completion(.failure(error))
-        return
+        result = .failure(error)
+      } else if let data = data {
+        do {
+          let serverResponse = try JSONDecoder.defaultDecoder.decode(ServerResponse.self, from: data)
+          result = .success(SearchResponse(articles: serverResponse.response.docs, meta: serverResponse.response.meta))
+        } catch {
+          result = .failure(error)
+        }
+      } else {
+        result = .failure(NetworkError.noData)
       }
-      guard let data = data else {
-        completion(.failure(NetworkError.noData))
-        return
-      }
-      do {
-        let serverResponse = try JSONDecoder.defaultDecoder.decode(ServerResponse.self, from: data)
-        completion(.success(SearchResponse(articles: serverResponse.response.docs, meta: serverResponse.response.meta)))
-      } catch {
-        completion(.failure(error))
+      DispatchQueue.main.async {
+        completion(result)
       }
     }
     task.resume()

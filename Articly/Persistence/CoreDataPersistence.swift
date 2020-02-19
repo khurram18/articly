@@ -14,8 +14,8 @@ final class CoreDataPersistence: PersistenceProvider {
 private let dispatchQueue = DispatchQueue(label: "com.example.Articly.DispatchQueue")
   
 func persist(articles: [Article]) {
+  let context = AppDelegate.instance.persistentContainer.newBackgroundContext()
   dispatchQueue.async {
-    let context = AppDelegate.instance.persistentContainer.newBackgroundContext()
     for article in articles {
       let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
       fetchRequest.predicate = NSPredicate(format: "uri LIKE[c] %@", article.uri)
