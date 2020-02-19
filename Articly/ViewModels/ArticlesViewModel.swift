@@ -32,7 +32,7 @@ func search(query: String) {
   performSearch()
 }
 
-func loadMore() {
+func loadNextPage() {
   page += 1
   performSearch()
 }
@@ -49,6 +49,7 @@ private func performSearch() {
     guard let strongSelf = self else { return }
     switch result {
     case .success(let response):
+      strongSelf.meta = response.meta
       let articles = response.articles.map { $0.toArticle() }
       strongSelf.persist(articles)
       strongSelf.articlesArray.append(contentsOf: articles)

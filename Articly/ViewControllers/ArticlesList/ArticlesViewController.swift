@@ -10,9 +10,15 @@ import UIKit
 
 final class ArticlesViewController: UIViewController {
 
-  @IBOutlet weak var tableView: UITableView!
-  var viewModel: ArticlesViewModel?
+@IBOutlet weak var tableView: UITableView!
+  
+var viewModel: ArticlesViewModel?
 private let searchController = UISearchController(searchResultsController: nil)
+private let indicatorView: UIActivityIndicatorView = {
+  let view = UIActivityIndicatorView()
+  view.style = .large
+  return view
+}()
 private var isLoadingObservation: NSKeyValueObservation?
 private var errorMessageObservation: NSKeyValueObservation?
   
@@ -52,7 +58,21 @@ private func observeViewModel() {
 }
   
 private func showLoadingIndicator(_ show: Bool) {
-  print(show)
+  guard let viewModel = viewModel else { return }
+  if show {
+    if viewModel.articlesArray.isEmpty {
+      tableView.tableFooterView = nil
+      indicatorView.frame = CGRect(x: 0, y: 50, width: 200, height: 200)
+      tableView.tableHeaderView = indicatorView
+    } else {
+      tableView.tableHeaderView = nil
+      indicatorView.frame = CGRect(x: 0, y: -50, width: 200, height: 200)
+      tableView.tableFooterView = indicatorView
+    }
+    indicatorView.startAnimating()
+  } else {
+    indicatorView.stopAnimating()
+  }
 }
 private func showErrorMessage(_ errorMessage: String) {
   print(errorMessage)
