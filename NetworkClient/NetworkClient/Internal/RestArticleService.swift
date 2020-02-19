@@ -10,12 +10,12 @@ import Foundation
 
 final class RestArticleService: ArticleService {
   
-private var task: URLSessionDataTask?
+private var tasks = Set<URLSessionDataTask>()
   
 func search(query: String, page: Int, completion: @escaping (Result<[Article], Error>) -> Void) {
   do {
     let request = try Router.searchArticles(query: query, pageNumber: page).urlRequest()
-    task = URLSession.shared.dataTask(with: request) {data, response, error in
+    let task = URLSession.shared.dataTask(with: request) {data, response, error in
       if let error = error {
         completion(.failure(error))
         return
@@ -31,7 +31,8 @@ func search(query: String, page: Int, completion: @escaping (Result<[Article], E
         completion(.failure(error))
       }
     }
-    task?.resume()
+    task.resume()
+    tasks.insert(task)
   } catch {
     completion(.failure(error))
   }
