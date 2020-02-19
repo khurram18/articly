@@ -20,14 +20,13 @@ func testGetArticless() {
   let exp = defaultExpectation()
   articleService?.search(query: "Ocean", page: 1) { result in
     switch result {
-    case .success(let articles):
-      print(articles)
+    case .success:
       exp.fulfill()
     case .failure(let error):
       print(error)
     }
   }
-  wait(for: [exp], timeout: 10.0)
+  wait(for: [exp], timeout: 5.0)
 }
 
 }

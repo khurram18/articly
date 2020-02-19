@@ -12,7 +12,7 @@ final class RestArticleService: ArticleService {
   
 private var tasks = Set<URLSessionDataTask>()
   
-func search(query: String, page: Int, completion: @escaping (Result<[Article], Error>) -> Void) {
+func search(query: String, page: Int, completion: @escaping (Result<SearchResponse, Error>) -> Void) {
   do {
     let request = try Router.searchArticles(query: query, pageNumber: page).urlRequest()
     let task = URLSession.shared.dataTask(with: request) {data, response, error in
@@ -26,7 +26,7 @@ func search(query: String, page: Int, completion: @escaping (Result<[Article], E
       }
       do {
         let serverResponse = try JSONDecoder.defaultDecoder.decode(ServerResponse.self, from: data)
-        completion(.success(serverResponse.response.docs))
+        completion(.success(SearchResponse(articles: serverResponse.response.docs, meta: serverResponse.response.meta)))
       } catch {
         completion(.failure(error))
       }
