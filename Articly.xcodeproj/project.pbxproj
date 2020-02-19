@@ -11,7 +11,7 @@
 		205DCC7223FD03D300AD452A /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20BFCB3A23FCFF2800A0E599 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFCB3923FCFF2800A0E599 /* AppDelegate.swift */; };
 		20BFCB3C23FCFF2800A0E599 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFCB3B23FCFF2800A0E599 /* SceneDelegate.swift */; };
-		20BFCB3E23FCFF2800A0E599 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFCB3D23FCFF2800A0E599 /* ViewController.swift */; };
+		20BFCB3E23FCFF2800A0E599 /* ArticlesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFCB3D23FCFF2800A0E599 /* ArticlesViewController.swift */; };
 		20BFCB4123FCFF2800A0E599 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BFCB3F23FCFF2800A0E599 /* Main.storyboard */; };
 		20BFCB4423FCFF2800A0E599 /* Articly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20BFCB4223FCFF2800A0E599 /* Articly.xcdatamodeld */; };
 		20BFCB4623FCFF2900A0E599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20BFCB4523FCFF2900A0E599 /* Assets.xcassets */; };
@@ -70,7 +70,7 @@
 		20BFCB3623FCFF2800A0E599 /* Articly.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Articly.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BFCB3923FCFF2800A0E599 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20BFCB3B23FCFF2800A0E599 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20BFCB3D23FCFF2800A0E599 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20BFCB3D23FCFF2800A0E599 /* ArticlesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewController.swift; sourceTree = "<group>"; };
 		20BFCB4023FCFF2800A0E599 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20BFCB4323FCFF2800A0E599 /* Articly.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Articly.xcdatamodel; sourceTree = "<group>"; };
 		20BFCB4523FCFF2900A0E599 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -126,6 +126,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		20B8ECE923FD34AC00E8D360 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				20BFCB3D23FCFF2800A0E599 /* ArticlesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		20B8ECEA23FD34C100E8D360 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				20BFCB4723FCFF2900A0E599 /* LaunchScreen.storyboard */,
+				20BFCB3F23FCFF2800A0E599 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		20BFCB2D23FCFF2800A0E599 = {
 			isa = PBXGroup;
 			children = (
@@ -151,12 +168,11 @@
 		20BFCB3823FCFF2800A0E599 /* Articly */ = {
 			isa = PBXGroup;
 			children = (
+				20B8ECEA23FD34C100E8D360 /* Storyboards */,
+				20B8ECE923FD34AC00E8D360 /* ViewControllers */,
 				20BFCB3923FCFF2800A0E599 /* AppDelegate.swift */,
 				20BFCB3B23FCFF2800A0E599 /* SceneDelegate.swift */,
-				20BFCB3D23FCFF2800A0E599 /* ViewController.swift */,
-				20BFCB3F23FCFF2800A0E599 /* Main.storyboard */,
 				20BFCB4523FCFF2900A0E599 /* Assets.xcassets */,
-				20BFCB4723FCFF2900A0E599 /* LaunchScreen.storyboard */,
 				20BFCB4A23FCFF2900A0E599 /* Info.plist */,
 				20BFCB4223FCFF2800A0E599 /* Articly.xcdatamodeld */,
 			);
@@ -337,7 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BFCB4423FCFF2800A0E599 /* Articly.xcdatamodeld in Sources */,
-				20BFCB3E23FCFF2800A0E599 /* ViewController.swift in Sources */,
+				20BFCB3E23FCFF2800A0E599 /* ArticlesViewController.swift in Sources */,
 				20BFCB3A23FCFF2800A0E599 /* AppDelegate.swift in Sources */,
 				20BFCB3C23FCFF2800A0E599 /* SceneDelegate.swift in Sources */,
 			);

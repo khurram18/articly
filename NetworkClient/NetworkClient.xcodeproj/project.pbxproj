@@ -108,8 +108,8 @@
 			children = (
 				205DCC7823FD059500AD452A /* Internal */,
 				205DCC7423FD052800AD452A /* Public */,
-				205DCC4D23FD038600AD452A /* NetworkClient.h */,
 				205DCC4E23FD038600AD452A /* Info.plist */,
+				205DCC4D23FD038600AD452A /* NetworkClient.h */,
 			);
 			path = NetworkClient;
 			sourceTree = "<group>";
@@ -127,8 +127,8 @@
 		205DCC7423FD052800AD452A /* Public */ = {
 			isa = PBXGroup;
 			children = (
-				205DCC8023FD06E500AD452A /* Services */,
 				205DCC7F23FD06D700AD452A /* Models */,
+				205DCC8023FD06E500AD452A /* Services */,
 				205DCC6D23FD039A00AD452A /* NetworkClient.swift */,
 			);
 			path = Public;
@@ -151,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				205DCC7C23FD06CB00AD452A /* Article.swift */,
+				20B8ECE023FD270700E8D360 /* Meta.swift */,
 				20B8ECD823FD185500E8D360 /* NetworkError.swift */,
 			);
 			path = Models;
@@ -160,7 +161,6 @@
 			isa = PBXGroup;
 			children = (
 				205DCC7523FD055A00AD452A /* ArticleService.swift */,
-				20B8ECE023FD270700E8D360 /* Meta.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
