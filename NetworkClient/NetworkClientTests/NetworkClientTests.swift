@@ -18,7 +18,7 @@ override func setUp() {
 
 func testGetArticless() {
   let exp = defaultExpectation()
-  articleService?.search(query: "Ocean", page: 1) { result in
+  articleService?.search(query: "Ocean", page: 0) { result in
     switch result {
     case .success:
       exp.fulfill()
