@@ -10,22 +10,19 @@ import CoreData
 import Foundation
 
 final class CoreDataPersistence: PersistenceProvider {
-  
+private let persistentContainer: NSPersistentContainer
 private let dispatchQueue = DispatchQueue(label: "com.example.Articly.DispatchQueue")
+
+init(persistentContainer: NSPersistentContainer) {
+  self.persistentContainer = persistentContainer
+}
   
 func persist(articles: [Article]) {
-  let context = AppDelegate.instance.persistentContainer.newBackgroundContext()
+  let context = persistentContainer.newBackgroundContext()
   dispatchQueue.async {
     for article in articles {
-      let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
-      fetchRequest.predicate = NSPredicate(format: "uri LIKE[c] %@", article.uri)
-      do {
-        let result = try context.fetch(fetchRequest)
-        let coreArticle = result.first ?? NSEntityDescription.insertNewObject(forEntityName: "CoreArticle", into: context) as! CoreArticle
-        article.updateTo(coreArticle)
-      } catch {
-        print(error)
-      }
+      let coreArticle = self.getCore(from: article, context: context) ?? NSEntityDescription.insertNewObject(forEntityName: "CoreArticle", into: context) as! CoreArticle
+      article.updateTo(coreArticle)
     }
     do {
       try context.save()
@@ -33,6 +30,17 @@ func persist(articles: [Article]) {
       print(error)
     }
   }
+}
+  
+func getCore(from article: Article, context: NSManagedObjectContext) -> CoreArticle? {
+  let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
+  fetchRequest.predicate = NSPredicate(format: "uri LIKE[c] %@", article.uri)
+  do {
+    return try context.fetch(fetchRequest).first
+  } catch {
+    print(error)
+  }
+  return nil
 }
   
 }
