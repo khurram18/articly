@@ -10,11 +10,11 @@ import Foundation
 
 public struct ApiArticle {
   
-let abstract: String
-let webUrl: String
-let leadParagraph: String
-let publishedDate: Date
-let uri: String
+public let abstract: String
+public let webUrl: String
+public let leadParagraph: String
+public let publishedDate: Date
+public let uri: String
   
 init(abstract: String, webUrl: String, leadParagraph: String, publishedDate: Date, uri: String) {
   self.abstract = abstract

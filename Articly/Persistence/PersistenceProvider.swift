@@ -9,7 +9,7 @@
 import Foundation
 
 protocol PersistenceProvider {
-//  func persis(article: Ar) -> <#return type#> {
-//  <#function body#>
-//  }
+  
+func persist(articles: [Article])
+  
 }
