@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -32,6 +32,7 @@
 		20419F7123FE40A300F7F705 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F6F23FE40A300F7F705 /* ArticleDetailViewController.swift */; };
 		20419F7323FE416500F7F705 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F7223FE416500F7F705 /* ArticleViewModel.swift */; };
 		20419F7423FE416500F7F705 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F7223FE416500F7F705 /* ArticleViewModel.swift */; };
+		20419F7A23FE578500F7F705 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 20419F7923FE578500F7F705 /* AlamofireImage */; };
 		205DCC7123FD03D300AD452A /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; };
 		205DCC7223FD03D300AD452A /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20B8ECF023FD3CB000E8D360 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */; };
@@ -131,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				205DCC7123FD03D300AD452A /* NetworkClient.framework in Frameworks */,
+				20419F7A23FE578500F7F705 /* AlamofireImage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -326,6 +328,9 @@
 			dependencies = (
 			);
 			name = Articly;
+			packageProductDependencies = (
+				20419F7923FE578500F7F705 /* AlamofireImage */,
+			);
 			productName = Articly;
 			productReference = 20BFCB3623FCFF2800A0E599 /* Articly.app */;
 			productType = "com.apple.product-type.application";
@@ -398,6 +403,9 @@
 				Base,
 			);
 			mainGroup = 20BFCB2D23FCFF2800A0E599;
+			packageReferences = (
+				20419F7823FE578500F7F705 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+			);
 			productRefGroup = 20BFCB3723FCFF2800A0E599 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -816,6 +824,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		20419F7823FE578500F7F705 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		20419F7923FE578500F7F705 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 20419F7823FE578500F7F705 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		20BFCB4223FCFF2800A0E599 /* Articly.xcdatamodeld */ = {

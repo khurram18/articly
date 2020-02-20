@@ -6,22 +6,37 @@
 //  Copyright © 2020 Example. All rights reserved.
 //
 
+import AlamofireImage
 import UIKit
 
-class ArticleTableViewCell: UITableViewCell {
+final class ArticleTableViewCell: UITableViewCell {
 
 static let identifier = "com.example.Articly.ArticleTableViewCell"
   
+@IBOutlet weak var dateLabel: UILabel!
+@IBOutlet weak var titleLabel: UILabel!
+@IBOutlet weak var bannerImageView: UIImageView!
+  
 func configure(_ viewModel: ArticleTableViewCellViewModel) {
-  textLabel?.text = viewModel.abstract
+  titleLabel.text = viewModel.abstract
+  dateLabel.text = viewModel.publishedDate
+  guard let imageString = viewModel.image,
+    let imageUrl = URL(string: imageString) else { return }
+  bannerImageView.af_setImage(withURL: imageUrl, filter: AspectScaledToFillSizeFilter(size: bannerImageView.bounds.size), imageTransition: UIImageView.ImageTransition.crossDissolve(0.5), runImageTransitionIfCached: false)
+}
+
+override func prepareForReuse() {
+  super.prepareForReuse()
+  titleLabel.text = nil
+  dateLabel.text = nil
+  bannerImageView.af_cancelImageRequest()
+  bannerImageView.image = nil
 }
   
 override func awakeFromNib() {
   super.awakeFromNib()
+  bannerImageView.layer.cornerRadius = 20
+  bannerImageView.clipsToBounds = true
 }
-
-override func setSelected(_ selected: Bool, animated: Bool) {
-  super.setSelected(selected, animated: animated)
-}
-
-}
+  
+} // class ArticleTableViewCell

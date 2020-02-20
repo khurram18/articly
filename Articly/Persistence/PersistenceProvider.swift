@@ -11,5 +11,6 @@ import Foundation
 protocol PersistenceProvider {
   
 func persist(articles: [Article])
+func getPersisted() -> [Article]?
   
 }

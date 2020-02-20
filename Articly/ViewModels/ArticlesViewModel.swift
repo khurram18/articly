@@ -24,6 +24,8 @@ var articlesArray = [Article]()
 init(articlesService: ArticleService, persistenceProvider: PersistenceProvider) {
   self.articlesService = articlesService
   self.persistenceProvider = persistenceProvider
+  super.init()
+  loadPersistedArticles()
 }
   
 func search(query: String) {
@@ -47,6 +49,10 @@ private var hasMore: Bool {
   // As per documentation here https://developer.nytimes.com/docs/articlesearch-product/1/overview
   // we can get a maxiumum of 100 pages
   meta.offset < meta.hits && page <= 100
+}
+private func loadPersistedArticles() {
+  guard let persisted = persistenceProvider.getPersisted() else { return }
+  articlesArray.append(contentsOf: persisted)
 }
   
 private func performSearch() {

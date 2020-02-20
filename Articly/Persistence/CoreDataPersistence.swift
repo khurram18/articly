@@ -32,6 +32,17 @@ func persist(articles: [Article]) {
   }
 }
   
+func getPersisted() -> [Article]? {
+  let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
+  fetchRequest.sortDescriptors = [NSSortDescriptor(key: "publishedDate", ascending: true)]
+  do {
+    return try persistentContainer.viewContext.fetch(fetchRequest).map{ $0.toArticle() }
+  } catch {
+    print(error)
+  }
+  return nil
+}
+  
 func getCore(from article: Article, context: NSManagedObjectContext) -> CoreArticle? {
   let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
   fetchRequest.predicate = NSPredicate(format: "uri LIKE[c] %@", article.uri)
@@ -43,4 +54,10 @@ func getCore(from article: Article, context: NSManagedObjectContext) -> CoreArti
   return nil
 }
   
+}
+
+extension CoreArticle {
+func toArticle() -> Article {
+  Article(abstract: abstract ?? "", webUrl: webUrl ?? "", leadParagraph: leadParagraph ?? "", publishedDate: publishedDate ?? Date(), uri: uri ?? "", image: image, largeImage: largeImage)
+}
 }
