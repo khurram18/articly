@@ -33,11 +33,14 @@ func search(query: String) {
 }
 
 func loadNextPage() {
+  if !hasMore {
+    return
+  }
   page += 1
   performSearch()
 }
   
-var hasMore: Bool {
+private var hasMore: Bool {
   // As per documentation here https://developer.nytimes.com/docs/articlesearch-product/1/overview
   // we can get a maxiumum of 100 pages
   meta.offset < meta.hits && page <= 100
