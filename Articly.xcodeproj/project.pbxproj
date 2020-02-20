@@ -33,6 +33,7 @@
 		20419F7323FE416500F7F705 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F7223FE416500F7F705 /* ArticleViewModel.swift */; };
 		20419F7423FE416500F7F705 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F7223FE416500F7F705 /* ArticleViewModel.swift */; };
 		20419F7A23FE578500F7F705 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 20419F7923FE578500F7F705 /* AlamofireImage */; };
+		20419F7D23FE852200F7F705 /* ArticlesViewController+UserMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F7C23FE852200F7F705 /* ArticlesViewController+UserMessage.swift */; };
 		205DCC7123FD03D300AD452A /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; };
 		205DCC7223FD03D300AD452A /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20B8ECF023FD3CB000E8D360 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */; };
@@ -106,6 +107,7 @@
 		20419F6823FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		20419F6F23FE40A300F7F705 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		20419F7223FE416500F7F705 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
+		20419F7C23FE852200F7F705 /* ArticlesViewController+UserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+UserMessage.swift"; sourceTree = "<group>"; };
 		205DCC6423FD038700AD452A /* NetworkClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkClient.xcodeproj; path = NetworkClient/NetworkClient.xcodeproj; sourceTree = "<group>"; };
 		20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		20B8ECF323FD3EB100E8D360 /* AppStateNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateNavigation.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				2006494023FD779B005E3F7D /* ArticlesViewController+SearchBarDelegate.swift */,
 				2006494423FD783B005E3F7D /* ArticlesViewController+UITableViewDataSource.swift */,
 				20419F6823FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift */,
+				20419F7C23FE852200F7F705 /* ArticlesViewController+UserMessage.swift */,
 			);
 			path = ArticlesList;
 			sourceTree = "<group>";
@@ -488,6 +491,7 @@
 				20B8ECF423FD3EB100E8D360 /* AppStateNavigation.swift in Sources */,
 				2006494F23FD797C005E3F7D /* Article+ViewModel.swift in Sources */,
 				2006494923FD78A0005E3F7D /* ArticleTableViewCell.swift in Sources */,
+				20419F7D23FE852200F7F705 /* ArticlesViewController+UserMessage.swift in Sources */,
 				20419F6923FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift in Sources */,
 				20419F7323FE416500F7F705 /* ArticleViewModel.swift in Sources */,
 				2006494523FD783B005E3F7D /* ArticlesViewController+UITableViewDataSource.swift in Sources */,

@@ -19,7 +19,7 @@ private var meta = Meta(hits: 0, offset: 0)
 var onArticleSelected: ((Article) -> Void)?
 var articlesArray = [Article]()
 @objc dynamic var isLoading = false
-@objc dynamic var errorMessage = ""
+@objc dynamic var userMessage = ""
   
 init(articlesService: ArticleService, persistenceProvider: PersistenceProvider) {
   self.articlesService = articlesService
@@ -53,6 +53,10 @@ private var hasMore: Bool {
 private func loadPersistedArticles() {
   guard let persisted = persistenceProvider.getPersisted() else { return }
   articlesArray.append(contentsOf: persisted)
+  // Adding an artificial delay here for a more pleasing animation 
+  DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+    self.userMessage = "Showing cached articles from previous searches."
+  }
 }
   
 private func performSearch() {
@@ -78,7 +82,7 @@ private func persist(_ articles: [Article]) {
   
 private func onError(_ error: Error) {
   guard let networkError = error as? NetworkError else { return }
-  errorMessage = networkError.description
+  userMessage = networkError.description
 }
 
 } // class ArticlesViewModel

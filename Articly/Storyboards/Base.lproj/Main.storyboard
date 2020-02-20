@@ -91,6 +91,25 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="78m-c8-gnj"/>
                                 </connections>
                             </tableView>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEY-gA-70e">
+                                <rect key="frame" x="0.0" y="38" width="414" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9q-AO-MgQ">
+                                        <rect key="frame" x="8" y="0.0" width="398" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="b9q-AO-MgQ" firstAttribute="leading" secondItem="IEY-gA-70e" secondAttribute="leading" constant="8" id="33b-Vf-Ev0"/>
+                                    <constraint firstAttribute="trailing" secondItem="b9q-AO-MgQ" secondAttribute="trailing" constant="8" id="HEv-Kq-hzU"/>
+                                    <constraint firstAttribute="bottom" secondItem="b9q-AO-MgQ" secondAttribute="bottom" id="LAh-4x-agr"/>
+                                    <constraint firstAttribute="height" constant="50" id="nX3-kz-jpJ"/>
+                                    <constraint firstItem="b9q-AO-MgQ" firstAttribute="top" secondItem="IEY-gA-70e" secondAttribute="top" id="rrb-0A-JxL"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
@@ -98,12 +117,19 @@
                             <constraint firstItem="xTu-f6-ihc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Dxd-Cv-gju"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xTu-f6-ihc" secondAttribute="trailing" id="Hyk-Zm-S1q"/>
                             <constraint firstItem="xTu-f6-ihc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="S0s-fv-323"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IEY-gA-70e" secondAttribute="trailing" id="TjZ-Qc-h5Q"/>
+                            <constraint firstItem="IEY-gA-70e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y6c-JO-dvi"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="IEY-gA-70e" secondAttribute="top" constant="50" id="qtI-3y-Ten"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="G2P-bn-8PC"/>
                     <connections>
+                        <outlet property="messageLabel" destination="b9q-AO-MgQ" id="ahH-rY-sDI"/>
+                        <outlet property="messageView" destination="IEY-gA-70e" id="eef-Im-BuS"/>
+                        <outlet property="messageViewTopConstraint" destination="qtI-3y-Ten" id="WMP-35-Zva"/>
                         <outlet property="tableView" destination="xTu-f6-ihc" id="6Yw-1b-Kim"/>
+                        <outlet property="tableViewTopConstraint" destination="S0s-fv-323" id="RM5-oO-fcV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

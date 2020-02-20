@@ -10,7 +10,11 @@ import UIKit
 
 final class ArticlesViewController: UIViewController {
 
+  @IBOutlet weak var messageViewTopConstraint: NSLayoutConstraint!
+  @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
 @IBOutlet weak var tableView: UITableView!
+  @IBOutlet weak var messageLabel: UILabel!
+  @IBOutlet weak var messageView: UIView!
   
 var viewModel: ArticlesViewModel?
 private let searchController = UISearchController(searchResultsController: nil)
@@ -20,14 +24,14 @@ private let indicatorView: UIActivityIndicatorView = {
   return view
 }()
 private var isLoadingObservation: NSKeyValueObservation?
-private var errorMessageObservation: NSKeyValueObservation?
+private var userMessageObservation: NSKeyValueObservation?
   
 override func viewDidLoad() {
   super.viewDidLoad()
   confirgureSearch()
 }
-override func viewWillAppear(_ animated: Bool) {
-  super.viewWillAppear(animated)
+override func viewDidAppear(_ animated: Bool) {
+  super.viewDidAppear(animated)
   observeViewModel()
 }
 override func viewWillDisappear(_ animated: Bool) {
@@ -45,7 +49,7 @@ private func confirgureSearch() {
   
 private func removeViewModelObservers() {
   isLoadingObservation = nil
-  errorMessageObservation = nil
+  userMessageObservation = nil
 }
 private func observeViewModel() {
   
@@ -58,9 +62,9 @@ private func observeViewModel() {
       self?.tableView.reloadData()
     }
   }
-  errorMessageObservation = viewModel.observe(\ArticlesViewModel.errorMessage, options: [.new]) { [weak self] _, change in
-    if let errorMessage = change.newValue {
-      self?.showErrorMessage(errorMessage)
+  userMessageObservation = viewModel.observe(\ArticlesViewModel.userMessage, options: [.new]) { [weak self] _, change in
+    if let userMessage = change.newValue {
+      self?.showUserMessage(userMessage)
     }
   }
 }
@@ -81,8 +85,5 @@ private func showLoadingIndicator(_ show: Bool) {
   } else {
     indicatorView.stopAnimating()
   }
-}
-private func showErrorMessage(_ errorMessage: String) {
-  print(errorMessage)
 }
 }
