@@ -26,7 +26,7 @@ func testGetArticles() {
       print(error)
     }
   }
-  wait(for: [exp], timeout: 5.0)
+  wait(for: [exp], timeout: 10.0)
 }
 
 }
