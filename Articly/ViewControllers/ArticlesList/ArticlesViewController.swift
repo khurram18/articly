@@ -30,6 +30,10 @@ override func viewWillAppear(_ animated: Bool) {
   super.viewWillAppear(animated)
   observeViewModel()
 }
+override func viewWillDisappear(_ animated: Bool) {
+  super.viewWillDisappear(animated)
+  removeViewModelObservers()
+}
   
 private func confirgureSearch() {
   searchController.obscuresBackgroundDuringPresentation = false
@@ -39,6 +43,10 @@ private func confirgureSearch() {
   definesPresentationContext = true
 }
   
+private func removeViewModelObservers() {
+  isLoadingObservation = nil
+  errorMessageObservation = nil
+}
 private func observeViewModel() {
   
   guard let viewModel = viewModel else { return }
