@@ -92,7 +92,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xTu-f6-ihc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4ph-iE-EXg"/>
                             <constraint firstItem="xTu-f6-ihc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Dxd-Cv-gju"/>
