@@ -35,7 +35,7 @@ private func updateView() {
   guard let viewModel = viewModel else { return }
   
   if let urlString = viewModel.imageUrl, let url = URL(string: urlString) {
-    imageView.af_setImage(withURL: url, filter: AspectScaledToFillSizeFilter(size: imageView.bounds.size), imageTransition: UIImageView.ImageTransition.crossDissolve(0.5), runImageTransitionIfCached: false)
+    imageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "placeholder"), filter: AspectScaledToFillSizeFilter(size: imageView.bounds.size), imageTransition: UIImageView.ImageTransition.crossDissolve(0.5), runImageTransitionIfCached: false)
   }
   dateLabel.text = viewModel.date
   titleLabel.text = viewModel.heading

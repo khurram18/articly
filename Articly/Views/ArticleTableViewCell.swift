@@ -22,7 +22,7 @@ func configure(_ viewModel: ArticleTableViewCellViewModel) {
   dateLabel.text = viewModel.publishedDate
   guard let imageString = viewModel.image,
     let imageUrl = URL(string: imageString) else { return }
-  bannerImageView.af_setImage(withURL: imageUrl, filter: AspectScaledToFillSizeFilter(size: bannerImageView.bounds.size), imageTransition: UIImageView.ImageTransition.crossDissolve(0.5), runImageTransitionIfCached: false)
+  bannerImageView.af_setImage(withURL: imageUrl, placeholderImage: #imageLiteral(resourceName: "placeholder"), filter: AspectScaledToFillSizeFilter(size: bannerImageView.bounds.size), imageTransition: UIImageView.ImageTransition.crossDissolve(0.5), runImageTransitionIfCached: false)
 }
 
 override func prepareForReuse() {
