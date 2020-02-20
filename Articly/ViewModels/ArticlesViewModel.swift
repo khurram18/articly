@@ -51,9 +51,9 @@ private var hasMore: Bool {
   meta.offset < meta.hits && page <= 100
 }
 private func loadPersistedArticles() {
-  guard let persisted = persistenceProvider.getPersisted() else { return }
+  guard let persisted = persistenceProvider.getPersisted(recentFirst: true) else { return }
   articlesArray.append(contentsOf: persisted)
-  // Adding an artificial delay here for a more pleasing animation 
+  // Adding an artificial delay here for a more pleasing animation
   DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
     self.userMessage = "Showing cached articles from previous searches."
   }

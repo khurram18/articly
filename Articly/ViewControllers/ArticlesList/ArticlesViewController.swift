@@ -10,11 +10,11 @@ import UIKit
 
 final class ArticlesViewController: UIViewController {
 
-  @IBOutlet weak var messageViewTopConstraint: NSLayoutConstraint!
-  @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
+@IBOutlet weak var messageViewTopConstraint: NSLayoutConstraint!
+@IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
 @IBOutlet weak var tableView: UITableView!
-  @IBOutlet weak var messageLabel: UILabel!
-  @IBOutlet weak var messageView: UIView!
+@IBOutlet weak var messageLabel: UILabel!
+@IBOutlet weak var messageView: UIView!
   
 var viewModel: ArticlesViewModel?
 private let searchController = UISearchController(searchResultsController: nil)
@@ -58,9 +58,7 @@ private func observeViewModel() {
   isLoadingObservation = viewModel.observe(\ArticlesViewModel.isLoading, options: [.new]) { [weak self] _, change in
     let show = change.newValue ?? false
     self?.showLoadingIndicator(show)
-    if !show {
-      self?.tableView.reloadData()
-    }
+    self?.tableView.reloadData()
   }
   userMessageObservation = viewModel.observe(\ArticlesViewModel.userMessage, options: [.new]) { [weak self] _, change in
     if let userMessage = change.newValue {

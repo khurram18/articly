@@ -32,9 +32,9 @@ func persist(articles: [Article]) {
   }
 }
   
-func getPersisted() -> [Article]? {
+func getPersisted(recentFirst: Bool) -> [Article]? {
   let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
-  fetchRequest.sortDescriptors = [NSSortDescriptor(key: "publishedDate", ascending: true)]
+  fetchRequest.sortDescriptors = [NSSortDescriptor(key: "publishedDate", ascending: !recentFirst)]
   do {
     return try persistentContainer.viewContext.fetch(fetchRequest).map{ $0.toArticle() }
   } catch {
