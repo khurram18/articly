@@ -77,7 +77,7 @@ private func performSearch() {
 }
   
 private func persist(_ articles: [Article]) {
-  persistenceProvider.persist(articles: articles)
+  persistenceProvider.persist(articles: articles, completion: {_ in })
 }
   
 private func onError(_ error: Error) {

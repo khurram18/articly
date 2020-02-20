@@ -17,17 +17,23 @@ init(persistentContainer: NSPersistentContainer) {
   self.persistentContainer = persistentContainer
 }
   
-func persist(articles: [Article]) {
+func persist(articles: [Article], completion: @escaping (Bool) -> Void) {
   let context = persistentContainer.newBackgroundContext()
   dispatchQueue.async {
+    var success = false
     for article in articles {
       let coreArticle = self.getCore(from: article, context: context) ?? NSEntityDescription.insertNewObject(forEntityName: "CoreArticle", into: context) as! CoreArticle
       article.updateTo(coreArticle)
     }
     do {
       try context.save()
+      success = true
     } catch {
       print(error)
+      success = false
+    }
+    DispatchQueue.main.async {
+      completion(success)
     }
   }
 }
@@ -42,8 +48,25 @@ func getPersisted(recentFirst: Bool) -> [Article]? {
   }
   return nil
 }
-  
-func getCore(from article: Article, context: NSManagedObjectContext) -> CoreArticle? {
+func delete(article: Article, completion: @escaping (Bool) -> Void) {
+  let context = persistentContainer.newBackgroundContext()
+  dispatchQueue.async {
+    var success = true
+    if let coreArticle = self.getCore(from: article, context: context) {
+      context.delete(coreArticle)
+      do {
+        try context.save()
+      } catch {
+        print(error)
+        success = false
+      }
+    }
+    DispatchQueue.main.async {
+      completion(success)
+    }
+  }
+}
+private func getCore(from article: Article, context: NSManagedObjectContext) -> CoreArticle? {
   let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
   fetchRequest.predicate = NSPredicate(format: "uri LIKE[c] %@", article.uri)
   do {
