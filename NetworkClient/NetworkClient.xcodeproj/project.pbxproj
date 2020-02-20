@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		20419F7623FE4D3500F7F705 /* Multimedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F7523FE4D3500F7F705 /* Multimedia.swift */; };
+		20419F7723FE4D3500F7F705 /* Multimedia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F7523FE4D3500F7F705 /* Multimedia.swift */; };
 		205DCC5423FD038700AD452A /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC4A23FD038600AD452A /* NetworkClient.framework */; };
 		205DCC5923FD038700AD452A /* NetworkClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 205DCC5823FD038700AD452A /* NetworkClientTests.swift */; };
 		205DCC5B23FD038700AD452A /* NetworkClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 205DCC4D23FD038600AD452A /* NetworkClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -48,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		20419F7523FE4D3500F7F705 /* Multimedia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Multimedia.swift; sourceTree = "<group>"; };
 		205DCC4A23FD038600AD452A /* NetworkClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		205DCC4D23FD038600AD452A /* NetworkClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkClient.h; sourceTree = "<group>"; };
 		205DCC4E23FD038600AD452A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -157,6 +160,7 @@
 				20B8ECE023FD270700E8D360 /* Meta.swift */,
 				20B8ECD823FD185500E8D360 /* NetworkError.swift */,
 				20B8ECEB23FD355C00E8D360 /* SearchResponse.swift */,
+				20419F7523FE4D3500F7F705 /* Multimedia.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +299,7 @@
 				20B8ECE523FD2A1A00E8D360 /* JSONDecoder.swift in Sources */,
 				20B8ECE123FD270700E8D360 /* Meta.swift in Sources */,
 				20B8ECD023FD107A00E8D360 /* config.swift in Sources */,
+				20419F7623FE4D3500F7F705 /* Multimedia.swift in Sources */,
 				20B8ECEC23FD355C00E8D360 /* SearchResponse.swift in Sources */,
 				205DCC6E23FD039A00AD452A /* NetworkClient.swift in Sources */,
 				20B8ECD623FD10BE00E8D360 /* QueryItem.swift in Sources */,
@@ -306,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20419F7723FE4D3500F7F705 /* Multimedia.swift in Sources */,
 				20B8ECED23FD355C00E8D360 /* SearchResponse.swift in Sources */,
 				205DCC5923FD038700AD452A /* NetworkClientTests.swift in Sources */,
 				20B8ECE223FD270700E8D360 /* Meta.swift in Sources */,

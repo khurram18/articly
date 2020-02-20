@@ -11,4 +11,5 @@ import Foundation
 struct ArticleTableViewCellViewModel {
 let abstract: String
 let publishedDate: Date
+let image: String?
 }

@@ -10,6 +10,6 @@ import Foundation
 
 extension Article {
 func toCellViewModel() -> ArticleTableViewCellViewModel {
-  ArticleTableViewCellViewModel(abstract: abstract, publishedDate: publishedDate)
+  ArticleTableViewCellViewModel(abstract: abstract, publishedDate: publishedDate, image: image)
 }
 } // extension Article

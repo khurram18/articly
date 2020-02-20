@@ -15,5 +15,7 @@ let webUrl: String
 let leadParagraph: String
 let publishedDate: Date
 let uri: String
+let image: String?
+let largeImage: String?
   
 }

@@ -14,15 +14,13 @@ static let storyboardID = "articleDetailViewControllerStoryboardID"
   
 var viewModel: ArticleViewModel?
   
-@IBOutlet weak var headingLabel: UILabel!
-  
 override func viewDidLoad() {
   super.viewDidLoad()
   updateView()
 }
   
 private func updateView() {
-  headingLabel.text = viewModel?.heading
+  
 }
   
 }

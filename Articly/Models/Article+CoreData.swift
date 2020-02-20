@@ -16,5 +16,7 @@ func updateTo(_ coreArticle: CoreArticle) {
   coreArticle.publishedDate = publishedDate
   coreArticle.uri = uri
   coreArticle.webUrl = webUrl
+  coreArticle.image = image
+  coreArticle.largeImage = largeImage
 }
 }

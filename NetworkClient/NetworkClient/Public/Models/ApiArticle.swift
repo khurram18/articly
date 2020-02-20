@@ -15,13 +15,15 @@ public let webUrl: String
 public let leadParagraph: String
 public let publishedDate: Date
 public let uri: String
+public let multimedia: [Multimedia]
   
-init(abstract: String, webUrl: String, leadParagraph: String, publishedDate: Date, uri: String) {
+init(abstract: String, webUrl: String, leadParagraph: String, publishedDate: Date, uri: String, multimedia: [Multimedia]) {
   self.abstract = abstract
   self.webUrl = webUrl
   self.leadParagraph = leadParagraph
   self.publishedDate = publishedDate
   self.uri = uri
+  self.multimedia = multimedia
 }
   
 } // class Article
@@ -33,6 +35,7 @@ enum Keys: String, CodingKey {
   case leadParagraph = "lead_paragraph"
   case publishedDate = "pub_date"
   case uri
+  case multimedia
 }
 public init(from decoder: Decoder) throws {
   let container = try decoder.container(keyedBy: Keys.self)
@@ -41,6 +44,7 @@ public init(from decoder: Decoder) throws {
   let leadParagraph = try container.decode(String.self, forKey: .leadParagraph)
   let publishedDate = try container.decode(Date.self, forKey: .publishedDate)
   let uri = try container.decode(String.self, forKey: .uri)
-  self.init(abstract: abstract, webUrl: webUrl, leadParagraph: leadParagraph, publishedDate: publishedDate, uri: uri)
+  let multimedia = try container.decode([Multimedia].self, forKey: .multimedia)
+  self.init(abstract: abstract, webUrl: webUrl, leadParagraph: leadParagraph, publishedDate: publishedDate, uri: uri, multimedia: multimedia)
 }
 } // extension Article
