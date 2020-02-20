@@ -9,6 +9,13 @@
 import Foundation
 
 public struct SearchResponse {
+  
 public let articles: [ApiArticle]
 public let meta: Meta
+  
+public init(articles: [ApiArticle], meta: Meta) {
+  self.articles = articles
+  self.meta = meta
 }
+  
+} // struct SearchResponse

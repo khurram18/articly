@@ -59,7 +59,7 @@ func testRetrive() {
   let article = Article(abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
   sut?.persist(articles: [article], completion: { _ in
     let persisted = self.sut?.getPersisted(recentFirst: true)
-    let success = persisted != nil && persisted!.count == 1 && persisted![0].uri == article.uri
+    let success = persisted != nil && persisted!.count == 1 && persisted![0] == article
     if success {
       exp.fulfill()
     }

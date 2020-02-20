@@ -17,7 +17,7 @@ public let publishedDate: Date
 public let uri: String
 public let multimedia: [Multimedia]
   
-init(abstract: String, webUrl: String, leadParagraph: String, publishedDate: Date, uri: String, multimedia: [Multimedia]) {
+public init(abstract: String, webUrl: String, leadParagraph: String, publishedDate: Date, uri: String, multimedia: [Multimedia]) {
   self.abstract = abstract
   self.webUrl = webUrl
   self.leadParagraph = leadParagraph

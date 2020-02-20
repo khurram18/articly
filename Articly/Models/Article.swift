@@ -19,3 +19,5 @@ let image: String?
 let largeImage: String?
   
 }
+
+extension Article: Equatable {}
