@@ -17,4 +17,8 @@ func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forR
   }
 }
   
+func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+  viewModel?.onSelected(at: indexPath.row)
+}
+  
 } // extension ArticlesViewController

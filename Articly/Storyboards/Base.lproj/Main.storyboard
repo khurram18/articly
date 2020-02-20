@@ -68,5 +68,32 @@
             </objects>
             <point key="canvasLocation" x="-168.11594202898553" y="22.767857142857142"/>
         </scene>
+        <!--Article Detail View Controller-->
+        <scene sceneID="e4q-R1-bRN">
+            <objects>
+                <viewController storyboardIdentifier="articleDetailViewControllerStoryboardID" id="m0G-2r-j78" customClass="ArticleDetailViewController" customModule="Articly" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cSY-io-d3X">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4F-sZ-ryw">
+                                <rect key="frame" x="186" y="437" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="JdY-mB-IR8"/>
+                    </view>
+                    <connections>
+                        <outlet property="headingLabel" destination="f4F-sZ-ryw" id="gR2-hN-7oC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uoG-Vn-CnF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="23"/>
+        </scene>
     </scenes>
 </document>

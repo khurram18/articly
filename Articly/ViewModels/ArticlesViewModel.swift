@@ -16,6 +16,7 @@ private var page = 0
 private var query = ""
 private var meta = Meta(hits: 0, offset: 0)
 
+var onArticleSelected: ((Article) -> Void)?
 var articlesArray = [Article]()
 @objc dynamic var isLoading = false
 @objc dynamic var errorMessage = ""
@@ -39,7 +40,9 @@ func loadNextPage() {
   page += 1
   performSearch()
 }
-  
+func onSelected(at index: Int) {
+  onArticleSelected?(articlesArray[index])
+}
 private var hasMore: Bool {
   // As per documentation here https://developer.nytimes.com/docs/articlesearch-product/1/overview
   // we can get a maxiumum of 100 pages

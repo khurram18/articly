@@ -22,8 +22,20 @@ private func configureArticlesScreen() {
   guard let navigationController = window.rootViewController as? UINavigationController,
     let articlesViewController = navigationController.viewControllers.first as? ArticlesViewController else { return }
   
-  articlesViewController.viewModel = ArticlesViewModel(articlesService: getArticlesService(),
-                                                       persistenceProvider: CoreDataPersistence(persistentContainer: AppDelegate.instance.persistentContainer))
+  let articlesViewModel = ArticlesViewModel(articlesService: getArticlesService(),
+                                            persistenceProvider: CoreDataPersistence(persistentContainer: AppDelegate.instance.persistentContainer))
+  articlesViewModel.onArticleSelected = { [weak self] article in
+    self?.showArticleDetail(article)
+  }
+  articlesViewController.viewModel = articlesViewModel
+}
+  
+private func showArticleDetail(_ article: Article) {
+  guard let navigationController = window.rootViewController as? UINavigationController,
+    let detailsViewController = navigationController.storyboard?.instantiateViewController(identifier: ArticleDetailViewController.storyboardID) as? ArticleDetailViewController else { return }
+  
+  detailsViewController.viewModel = ArticleViewModel(article: article)
+  navigationController.pushViewController(detailsViewController, animated: true)
 }
   
 } // class AppStateNavigation
