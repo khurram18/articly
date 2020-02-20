@@ -81,8 +81,11 @@ private func persist(_ articles: [Article]) {
 }
   
 private func onError(_ error: Error) {
-  guard let networkError = error as? NetworkError else { return }
-  userMessage = networkError.description
+  if let networkError = error as? NetworkError {
+    userMessage = networkError.description
+    return
+  }
+  let nsError = error as NSError
+  userMessage = nsError.localizedDescription
 }
-
 } // class ArticlesViewModel
