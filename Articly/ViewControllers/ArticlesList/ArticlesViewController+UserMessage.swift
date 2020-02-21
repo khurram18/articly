@@ -26,14 +26,22 @@ func showUserMessage(_ userMessage: String) {
 }
 private func hideMessageView() {
   DispatchQueue.main.asyncAfter(deadline: .now() + messageDisplayDuration) {
-    UIView.animate(withDuration: animationDuration, animations: {
+    if self.isViewVisible {
+      UIView.animate(withDuration: animationDuration, animations: {
+        self.messageView.isHidden = true
+        self.messageViewTopConstraint.constant = 50
+        self.tableViewTopConstraint.constant = 0
+        self.view.layoutIfNeeded()
+      }, completion: {_ in
+        self.messageLabel.text = ""
+      })
+    } else {
       self.messageView.isHidden = true
       self.messageViewTopConstraint.constant = 50
       self.tableViewTopConstraint.constant = 0
-      self.view.layoutIfNeeded()
-    }, completion: {_ in
       self.messageLabel.text = ""
-    })
+    }
   }
 }
+  
 } // extension ArticlesViewController
