@@ -12,7 +12,7 @@ import Foundation
 extension Article {
 func updateTo(_ coreArticle: CoreArticle) {
   
-  
+  coreArticle.headline = headline
   coreArticle.abstract = abstract
   coreArticle.leadParagraph = leadParagraph
   coreArticle.publishedDate = publishedDate
