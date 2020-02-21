@@ -10,13 +10,11 @@ import UIKit
 
 final class ArticlesViewController: UIViewController {
 
-@IBOutlet weak var topButtonTopConstraint: NSLayoutConstraint!
 @IBOutlet weak var messageViewTopConstraint: NSLayoutConstraint!
 @IBOutlet weak var tableViewTopConstraint: NSLayoutConstraint!
 @IBOutlet weak var tableView: UITableView!
 @IBOutlet weak var messageLabel: UILabel!
 @IBOutlet weak var messageView: UIView!
-@IBOutlet weak var scrollToTopButton: UIButton!
   
 var viewModel: ArticlesViewModel?
 var searchBarDelegate: UISearchBarDelegate?
@@ -30,6 +28,14 @@ private let indicatorView: UIActivityIndicatorView = {
   view.style = .large
   return view
 }()
+private let emptyView: UIView = {
+  let label = UILabel()
+  label.text = "Please use search bar to search for articles."
+  label.textAlignment = .center
+  label.numberOfLines = 2
+  label.font = UIFont.preferredFont(forTextStyle: .title1)
+  return label
+}()
 private var isLoadingObservation: NSKeyValueObservation?
 private var userMessageObservation: NSKeyValueObservation?
   
@@ -41,6 +47,7 @@ override func viewDidLoad() {
 override func viewDidAppear(_ animated: Bool) {
   super.viewDidAppear(animated)
   observeViewModel()
+  checkEmptyTableView()
 }
 override func viewWillDisappear(_ animated: Bool) {
   super.viewWillDisappear(animated)
@@ -58,7 +65,6 @@ private func configureTableView() {
   tableView.delegate = tableViewDelegate
   tableView.dataSource = tableViewDataSource
   tableView.prefetchDataSource = tableViewDataSourcePrefetching
-  
 }
 private func removeObservers() {
   isLoadingObservation = nil
@@ -72,6 +78,7 @@ private func observeViewModel() {
     let show = change.newValue ?? false
     self?.showLoadingIndicator(show)
     self?.tableView.reloadData()
+    self?.checkEmptyTableView()
   }
   userMessageObservation = viewModel.observe(\ArticlesViewModel.userMessage, options: [.new]) { [weak self] _, change in
     if let userMessage = change.newValue {
@@ -95,6 +102,13 @@ private func showLoadingIndicator(_ show: Bool) {
     indicatorView.startAnimating()
   } else {
     indicatorView.stopAnimating()
+  }
+}
+private func checkEmptyTableView() {
+  if tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) == 0 {
+    tableView.backgroundView = emptyView
+  } else {
+    tableView.backgroundView = nil
   }
 }
 }
