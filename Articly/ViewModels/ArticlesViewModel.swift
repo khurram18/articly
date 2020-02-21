@@ -52,6 +52,9 @@ private var hasMore: Bool {
 }
 private func loadPersistedArticles() {
   guard let persisted = persistenceProvider.getPersisted(recentFirst: true) else { return }
+  if persisted.isEmpty {
+    return
+  }
   articlesArray.append(contentsOf: persisted)
   // Adding an artificial delay here for a more pleasing animation
   DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
