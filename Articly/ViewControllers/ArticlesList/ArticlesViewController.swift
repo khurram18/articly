@@ -17,6 +17,11 @@ final class ArticlesViewController: UIViewController {
 @IBOutlet weak var messageView: UIView!
   
 var viewModel: ArticlesViewModel?
+var searchBarDelegate: UISearchBarDelegate?
+var tableViewDataSource: UITableViewDataSource?
+var tableViewDelegate: UITableViewDelegate?
+var tableViewDataSourcePrefetching: UITableViewDataSourcePrefetching?
+  
 private let searchController = UISearchController(searchResultsController: nil)
 private let indicatorView: UIActivityIndicatorView = {
   let view = UIActivityIndicatorView()
@@ -29,6 +34,7 @@ private var userMessageObservation: NSKeyValueObservation?
 override func viewDidLoad() {
   super.viewDidLoad()
   confirgureSearch()
+  configureTableView()
 }
 override func viewDidAppear(_ animated: Bool) {
   super.viewDidAppear(animated)
@@ -43,10 +49,14 @@ private func confirgureSearch() {
   searchController.obscuresBackgroundDuringPresentation = false
   searchController.searchBar.placeholder = "Search Articles"
   navigationItem.searchController = searchController
-  searchController.searchBar.delegate = self
+  searchController.searchBar.delegate = searchBarDelegate
   definesPresentationContext = true
 }
-  
+private func configureTableView() {
+  tableView.delegate = tableViewDelegate
+  tableView.dataSource = tableViewDataSource
+  tableView.prefetchDataSource = tableViewDataSourcePrefetching
+}
 private func removeViewModelObservers() {
   isLoadingObservation = nil
   userMessageObservation = nil

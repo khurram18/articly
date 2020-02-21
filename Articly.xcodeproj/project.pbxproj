@@ -13,12 +13,12 @@
 		2006492E23FD4C64005E3F7D /* Article+CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006492D23FD4C64005E3F7D /* Article+CoreData.swift */; };
 		2006493123FD5415005E3F7D /* Article+Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006493023FD5415005E3F7D /* Article+Network.swift */; };
 		2006493F23FD66EE005E3F7D /* ArticlyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BFCB5E23FCFF2900A0E599 /* ArticlyUITests.swift */; };
-		2006494123FD779C005E3F7D /* ArticlesViewController+SearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006494023FD779B005E3F7D /* ArticlesViewController+SearchBarDelegate.swift */; };
-		2006494523FD783B005E3F7D /* ArticlesViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006494423FD783B005E3F7D /* ArticlesViewController+UITableViewDataSource.swift */; };
+		2006494123FD779C005E3F7D /* ArticlesSearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006494023FD779B005E3F7D /* ArticlesSearchBarDelegate.swift */; };
+		2006494523FD783B005E3F7D /* ArticlesTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006494423FD783B005E3F7D /* ArticlesTableViewDataSource.swift */; };
 		2006494923FD78A0005E3F7D /* ArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006494823FD78A0005E3F7D /* ArticleTableViewCell.swift */; };
 		2006494C23FD7930005E3F7D /* ArticleTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006494B23FD7930005E3F7D /* ArticleTableViewCellViewModel.swift */; };
 		2006494F23FD797C005E3F7D /* Article+ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2006494E23FD797C005E3F7D /* Article+ViewModel.swift */; };
-		20419F6923FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F6823FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift */; };
+		20419F6923FD91B100F7F705 /* ArticlesTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F6823FD91B100F7F705 /* ArticlesTableViewDelegate.swift */; };
 		20419F7023FE40A300F7F705 /* ArticleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F6F23FE40A300F7F705 /* ArticleDetailViewController.swift */; };
 		20419F7323FE416500F7F705 /* ArticleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F7223FE416500F7F705 /* ArticleViewModel.swift */; };
 		20419F7A23FE578500F7F705 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = 20419F7923FE578500F7F705 /* AlamofireImage */; };
@@ -29,8 +29,10 @@
 		20419F8923FEC5B700F7F705 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8823FEC5B700F7F705 /* ViewModelTests.swift */; };
 		20419F8B23FEC60400F7F705 /* MockArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8A23FEC60400F7F705 /* MockArticleService.swift */; };
 		20419F8D23FEC8C000F7F705 /* MockPersistenceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8C23FEC8C000F7F705 /* MockPersistenceProvider.swift */; };
-		20419F8F23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8E23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift */; };
+		20419F8F23FFB91C00F7F705 /* ArticlesTableViewDataSourcePrefetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8E23FFB91C00F7F705 /* ArticlesTableViewDataSourcePrefetching.swift */; };
 		20419F9123FFC73900F7F705 /* SimpleArticleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F9023FFC73900F7F705 /* SimpleArticleTableViewCell.swift */; };
+		20419F9323FFDF3600F7F705 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F9223FFDF3600F7F705 /* DependencyManager.swift */; };
+		20419F9523FFDFEC00F7F705 /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F9423FFDFEC00F7F705 /* AppNavigation.swift */; };
 		205DCC7123FD03D300AD452A /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; };
 		205DCC7223FD03D300AD452A /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20B8ECF023FD3CB000E8D360 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */; };
@@ -95,12 +97,12 @@
 		2006492A23FD4B61005E3F7D /* CoreDataPersistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPersistence.swift; sourceTree = "<group>"; };
 		2006492D23FD4C64005E3F7D /* Article+CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+CoreData.swift"; sourceTree = "<group>"; };
 		2006493023FD5415005E3F7D /* Article+Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+Network.swift"; sourceTree = "<group>"; };
-		2006494023FD779B005E3F7D /* ArticlesViewController+SearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+SearchBarDelegate.swift"; sourceTree = "<group>"; };
-		2006494423FD783B005E3F7D /* ArticlesViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		2006494023FD779B005E3F7D /* ArticlesSearchBarDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesSearchBarDelegate.swift; sourceTree = "<group>"; };
+		2006494423FD783B005E3F7D /* ArticlesTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewDataSource.swift; sourceTree = "<group>"; };
 		2006494823FD78A0005E3F7D /* ArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCell.swift; sourceTree = "<group>"; };
 		2006494B23FD7930005E3F7D /* ArticleTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		2006494E23FD797C005E3F7D /* Article+ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Article+ViewModel.swift"; sourceTree = "<group>"; };
-		20419F6823FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		20419F6823FD91B100F7F705 /* ArticlesTableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewDelegate.swift; sourceTree = "<group>"; };
 		20419F6F23FE40A300F7F705 /* ArticleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleDetailViewController.swift; sourceTree = "<group>"; };
 		20419F7223FE416500F7F705 /* ArticleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewModel.swift; sourceTree = "<group>"; };
 		20419F7C23FE852200F7F705 /* ArticlesViewController+UserMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+UserMessage.swift"; sourceTree = "<group>"; };
@@ -109,8 +111,10 @@
 		20419F8823FEC5B700F7F705 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		20419F8A23FEC60400F7F705 /* MockArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockArticleService.swift; sourceTree = "<group>"; };
 		20419F8C23FEC8C000F7F705 /* MockPersistenceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistenceProvider.swift; sourceTree = "<group>"; };
-		20419F8E23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+UITableViewDataSourcePrefetching.swift"; sourceTree = "<group>"; };
+		20419F8E23FFB91C00F7F705 /* ArticlesTableViewDataSourcePrefetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesTableViewDataSourcePrefetching.swift; sourceTree = "<group>"; };
 		20419F9023FFC73900F7F705 /* SimpleArticleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleArticleTableViewCell.swift; sourceTree = "<group>"; };
+		20419F9223FFDF3600F7F705 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		20419F9423FFDFEC00F7F705 /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
 		205DCC6423FD038700AD452A /* NetworkClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkClient.xcodeproj; path = NetworkClient/NetworkClient.xcodeproj; sourceTree = "<group>"; };
 		20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		20B8ECF323FD3EB100E8D360 /* AppStateNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateNavigation.swift; sourceTree = "<group>"; };
@@ -180,11 +184,11 @@
 		2006494323FD77D8005E3F7D /* ArticlesList */ = {
 			isa = PBXGroup;
 			children = (
+				2006494023FD779B005E3F7D /* ArticlesSearchBarDelegate.swift */,
+				2006494423FD783B005E3F7D /* ArticlesTableViewDataSource.swift */,
+				20419F8E23FFB91C00F7F705 /* ArticlesTableViewDataSourcePrefetching.swift */,
+				20419F6823FD91B100F7F705 /* ArticlesTableViewDelegate.swift */,
 				20BFCB3D23FCFF2800A0E599 /* ArticlesViewController.swift */,
-				2006494023FD779B005E3F7D /* ArticlesViewController+SearchBarDelegate.swift */,
-				2006494423FD783B005E3F7D /* ArticlesViewController+UITableViewDataSource.swift */,
-				20419F8E23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift */,
-				20419F6823FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift */,
 				20419F7C23FE852200F7F705 /* ArticlesViewController+UserMessage.swift */,
 			);
 			path = ArticlesList;
@@ -255,7 +259,9 @@
 			isa = PBXGroup;
 			children = (
 				20BFCB3923FCFF2800A0E599 /* AppDelegate.swift */,
+				20419F9423FFDFEC00F7F705 /* AppNavigation.swift */,
 				20B8ECF323FD3EB100E8D360 /* AppStateNavigation.swift */,
+				20419F9223FFDF3600F7F705 /* DependencyManager.swift */,
 				20BFCB3B23FCFF2800A0E599 /* SceneDelegate.swift */,
 			);
 			path = App;
@@ -487,6 +493,7 @@
 				2006492E23FD4C64005E3F7D /* Article+CoreData.swift in Sources */,
 				2006492B23FD4B61005E3F7D /* CoreDataPersistence.swift in Sources */,
 				20B8ECF023FD3CB000E8D360 /* ArticlesViewModel.swift in Sources */,
+				20419F9323FFDF3600F7F705 /* DependencyManager.swift in Sources */,
 				2006494C23FD7930005E3F7D /* ArticleTableViewCellViewModel.swift in Sources */,
 				20BFCB3E23FCFF2800A0E599 /* ArticlesViewController.swift in Sources */,
 				20419F9123FFC73900F7F705 /* SimpleArticleTableViewCell.swift in Sources */,
@@ -494,17 +501,18 @@
 				2006493123FD5415005E3F7D /* Article+Network.swift in Sources */,
 				20419F7023FE40A300F7F705 /* ArticleDetailViewController.swift in Sources */,
 				2006492823FD4B0F005E3F7D /* Article.swift in Sources */,
-				20419F8F23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift in Sources */,
-				2006494123FD779C005E3F7D /* ArticlesViewController+SearchBarDelegate.swift in Sources */,
+				20419F8F23FFB91C00F7F705 /* ArticlesTableViewDataSourcePrefetching.swift in Sources */,
+				2006494123FD779C005E3F7D /* ArticlesSearchBarDelegate.swift in Sources */,
 				2006492423FD4956005E3F7D /* PersistenceProvider.swift in Sources */,
+				20419F9523FFDFEC00F7F705 /* AppNavigation.swift in Sources */,
 				20BFCB3C23FCFF2800A0E599 /* SceneDelegate.swift in Sources */,
 				20B8ECF423FD3EB100E8D360 /* AppStateNavigation.swift in Sources */,
 				2006494F23FD797C005E3F7D /* Article+ViewModel.swift in Sources */,
 				2006494923FD78A0005E3F7D /* ArticleTableViewCell.swift in Sources */,
 				20419F7D23FE852200F7F705 /* ArticlesViewController+UserMessage.swift in Sources */,
-				20419F6923FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift in Sources */,
+				20419F6923FD91B100F7F705 /* ArticlesTableViewDelegate.swift in Sources */,
 				20419F7323FE416500F7F705 /* ArticleViewModel.swift in Sources */,
-				2006494523FD783B005E3F7D /* ArticlesViewController+UITableViewDataSource.swift in Sources */,
+				2006494523FD783B005E3F7D /* ArticlesTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

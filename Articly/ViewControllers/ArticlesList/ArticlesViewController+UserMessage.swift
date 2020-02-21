@@ -9,7 +9,7 @@
 import UIKit
 
 let animationDuration = 0.5
-// How long the message is displayed on screen
+// How long the message will stay on screeen
 let messageDisplayDuration = 5.0
 
 extension ArticlesViewController {

@@ -6,15 +6,16 @@
 //  Copyright © 2020 Example. All rights reserved.
 //
 
-import NetworkClient
 import UIKit
 
-final class AppStateNavigation {
+final class AppStateNavigation: AppNavigation {
 
 private let window: UIWindow
+private let dependencyManager: DependencyManager
   
-init(_ window: UIWindow) {
+init(window: UIWindow, dependencyManager: DependencyManager) {
   self.window = window
+  self.dependencyManager = dependencyManager
   configureArticlesScreen()
 }
 
@@ -22,19 +23,14 @@ private func configureArticlesScreen() {
   guard let navigationController = window.rootViewController as? UINavigationController,
     let articlesViewController = navigationController.viewControllers.first as? ArticlesViewController else { return }
   
-  let articlesViewModel = ArticlesViewModel(articlesService: getArticlesService(),
-                                            persistenceProvider: CoreDataPersistence(persistentContainer: AppDelegate.instance.persistentContainer))
-  articlesViewModel.onArticleSelected = { [weak self] article in
-    self?.showArticleDetail(article)
-  }
-  articlesViewController.viewModel = articlesViewModel
+  dependencyManager.resolve(for: articlesViewController)
 }
   
-private func showArticleDetail(_ article: Article) {
+func showArticleDetail(article: Article) {
   guard let navigationController = window.rootViewController as? UINavigationController,
     let detailsViewController = navigationController.storyboard?.instantiateViewController(identifier: ArticleDetailViewController.storyboardID) as? ArticleDetailViewController else { return }
   
-  detailsViewController.viewModel = ArticleViewModel(article: article)
+  dependencyManager.resolve(for: detailsViewController, article: article)
   navigationController.pushViewController(detailsViewController, animated: true)
 }
   

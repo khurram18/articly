@@ -70,7 +70,9 @@ func saveContext () {
 } // class AppDelegate
 
 extension AppDelegate {
+  
 static var instance: AppDelegate {
   UIApplication.shared.delegate as! AppDelegate
 }
-}
+  
+} // extension AppDelegate

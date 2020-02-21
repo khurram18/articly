@@ -1,5 +1,5 @@
 //
-//  ArticlesViewController+UITableViewDataSourcePrefetching.swift
+//  ArticlesTableViewDataSourcePrefetching.swift
 //  Articly
 //
 //  Created by Khurram on 21/02/2020.
@@ -8,10 +8,16 @@
 
 import UIKit
 
+final class ArticlesTableViewDataSourcePrefetching: NSObject, UITableViewDataSourcePrefetching {
+
 /// If user has scrolled past 75% rows then we will fetch next articles
 private let threshold: Float = 0.75
-
-extension ArticlesViewController: UITableViewDataSourcePrefetching {
+  
+private weak var viewModel: ArticlesViewModel?
+  
+init(viewModel: ArticlesViewModel) {
+  self.viewModel = viewModel
+}
   
 func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath]) {
   guard let viewModel = viewModel else { return }
@@ -21,4 +27,5 @@ func tableView(_ tableView: UITableView, prefetchRowsAt indexPaths: [IndexPath])
     }
   }
 }
-} // extension ArticlesViewController
+  
+} // class ArticlesTableViewDataSourcePrefetching

@@ -1,5 +1,5 @@
 //
-//  ArticlesViewController+UITableViewDataSource.swift
+//  ArticlesTableViewDataSource.swift
 //  Articly
 //
 //  Created by Khurram on 19/02/2020.
@@ -8,7 +8,13 @@
 
 import UIKit
 
-extension ArticlesViewController: UITableViewDataSource {
+final class ArticlesTableViewDataSource: NSObject, UITableViewDataSource {
+  
+private weak var viewModel: ArticlesViewModel?
+  
+init(viewModel: ArticlesViewModel) {
+  self.viewModel = viewModel
+}
   
 func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
   viewModel?.articlesArray.count ?? 0
@@ -33,4 +39,4 @@ func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> U
   return cell
 }
   
-} // extension ArticlesViewController
+} // class ArticlesTableViewDataSource

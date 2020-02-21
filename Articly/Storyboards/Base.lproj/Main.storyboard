@@ -144,11 +144,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="zYC-Od-Woq"/>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="78m-c8-gnj"/>
-                                    <outlet property="prefetchDataSource" destination="BYZ-38-t0r" id="llQ-JT-4YD"/>
-                                </connections>
                             </tableView>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IEY-gA-70e">
                                 <rect key="frame" x="0.0" y="38" width="414" height="50"/>

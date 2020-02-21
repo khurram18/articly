@@ -1,5 +1,5 @@
 //
-//  ArticlesViewController+UITableViewDelegate.swift
+//  ArticlesTableViewDelegate.swift
 //  Articly
 //
 //  Created by Khurram on 19/02/2020.
@@ -8,10 +8,16 @@
 
 import UIKit
 
+final class ArticlesTableViewDelegate: NSObject, UITableViewDelegate {
+  
 private let imageCellHeight: CGFloat = 250
 private let simpleCellHeight: CGFloat = 116
 
-extension ArticlesViewController: UITableViewDelegate {
+private weak var viewModel: ArticlesViewModel?
+  
+init(viewModel: ArticlesViewModel) {
+  self.viewModel = viewModel
+}
   
 func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
   viewModel?.onSelected(at: indexPath.row)
@@ -22,4 +28,4 @@ func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) ->
   return viewModel.articlesArray[indexPath.row].hasImage ? imageCellHeight : simpleCellHeight
 }
   
-} // extension ArticlesViewController
+} // class ArticlesTableViewDelegate
