@@ -11,6 +11,8 @@ import Foundation
 
 extension Article {
 func updateTo(_ coreArticle: CoreArticle) {
+  
+  
   coreArticle.abstract = abstract
   coreArticle.leadParagraph = leadParagraph
   coreArticle.publishedDate = publishedDate

@@ -81,6 +81,6 @@ private func getCore(from article: Article, context: NSManagedObjectContext) -> 
 
 extension CoreArticle {
 func toArticle() -> Article {
-  Article(abstract: abstract ?? "", webUrl: webUrl ?? "", leadParagraph: leadParagraph ?? "", publishedDate: publishedDate ?? Date(), uri: uri ?? "", image: image, largeImage: largeImage)
+  Article(headline: headline ?? "", abstract: abstract ?? "", webUrl: webUrl ?? "", leadParagraph: leadParagraph ?? "", publishedDate: publishedDate ?? Date(), uri: uri ?? "", image: image, largeImage: largeImage)
 }
 }

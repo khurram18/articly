@@ -19,7 +19,7 @@ private var dateFormatter: DateFormatter = {
 }()
   
 var heading: String {
-  article.abstract
+  article.headline
 }
   
 var date: String {

@@ -17,12 +17,12 @@ static var dateFormatter: DateFormatter = {
   return formatter
 }()
   
-let abstract: String
+let title: String
 let publishedDate: String
 let image: String?
   
-init(abstract: String, publishedDate: Date, image: String?) {
-  self.abstract = abstract
+init(title: String, publishedDate: Date, image: String?) {
+  self.title = title
   self.publishedDate = ArticleTableViewCellViewModel.dateFormatter.string(from: publishedDate)
   self.image = image
 }

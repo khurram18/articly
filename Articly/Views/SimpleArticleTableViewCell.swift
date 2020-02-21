@@ -30,7 +30,7 @@ override func setSelected(_ selected: Bool, animated: Bool) {
 }
   
 func configure(_ viewModel: ArticleTableViewCellViewModel) {
-  titleLabel.text = viewModel.abstract
+  titleLabel.text = viewModel.title
   dateLabel.text = viewModel.publishedDate
 }
 

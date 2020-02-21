@@ -18,7 +18,7 @@ static let identifier = "com.example.Articly.ArticleTableViewCell"
 @IBOutlet weak var bannerImageView: UIImageView!
   
 func configure(_ viewModel: ArticleTableViewCellViewModel) {
-  titleLabel.text = viewModel.abstract
+  titleLabel.text = viewModel.title
   dateLabel.text = viewModel.publishedDate
   guard let imageString = viewModel.image,
     let imageUrl = URL(string: imageString) else { return }

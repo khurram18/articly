@@ -9,7 +9,8 @@
 import Foundation
 
 struct Article {
-  
+
+let headline: String
 let abstract: String
 let webUrl: String
 let leadParagraph: String
