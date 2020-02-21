@@ -60,6 +60,9 @@ private func loadPersistedArticles() {
 }
   
 private func performSearch() {
+  if query.isEmpty || isLoading {
+    return
+  }
   isLoading = true
   articlesService.search(query: query, page: page) { [weak self] result in
     guard let strongSelf = self else { return }

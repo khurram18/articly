@@ -29,6 +29,7 @@
 		20419F8923FEC5B700F7F705 /* ViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8823FEC5B700F7F705 /* ViewModelTests.swift */; };
 		20419F8B23FEC60400F7F705 /* MockArticleService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8A23FEC60400F7F705 /* MockArticleService.swift */; };
 		20419F8D23FEC8C000F7F705 /* MockPersistenceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8C23FEC8C000F7F705 /* MockPersistenceProvider.swift */; };
+		20419F8F23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F8E23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift */; };
 		205DCC7123FD03D300AD452A /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; };
 		205DCC7223FD03D300AD452A /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20B8ECF023FD3CB000E8D360 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */; };
@@ -107,6 +108,7 @@
 		20419F8823FEC5B700F7F705 /* ViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelTests.swift; sourceTree = "<group>"; };
 		20419F8A23FEC60400F7F705 /* MockArticleService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockArticleService.swift; sourceTree = "<group>"; };
 		20419F8C23FEC8C000F7F705 /* MockPersistenceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockPersistenceProvider.swift; sourceTree = "<group>"; };
+		20419F8E23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+UITableViewDataSourcePrefetching.swift"; sourceTree = "<group>"; };
 		205DCC6423FD038700AD452A /* NetworkClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkClient.xcodeproj; path = NetworkClient/NetworkClient.xcodeproj; sourceTree = "<group>"; };
 		20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		20B8ECF323FD3EB100E8D360 /* AppStateNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateNavigation.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				20BFCB3D23FCFF2800A0E599 /* ArticlesViewController.swift */,
 				2006494023FD779B005E3F7D /* ArticlesViewController+SearchBarDelegate.swift */,
 				2006494423FD783B005E3F7D /* ArticlesViewController+UITableViewDataSource.swift */,
+				20419F8E23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift */,
 				20419F6823FD91B100F7F705 /* ArticlesViewController+UITableViewDelegate.swift */,
 				20419F7C23FE852200F7F705 /* ArticlesViewController+UserMessage.swift */,
 			);
@@ -487,6 +490,7 @@
 				2006493123FD5415005E3F7D /* Article+Network.swift in Sources */,
 				20419F7023FE40A300F7F705 /* ArticleDetailViewController.swift in Sources */,
 				2006492823FD4B0F005E3F7D /* Article.swift in Sources */,
+				20419F8F23FFB91C00F7F705 /* ArticlesViewController+UITableViewDataSourcePrefetching.swift in Sources */,
 				2006494123FD779C005E3F7D /* ArticlesViewController+SearchBarDelegate.swift in Sources */,
 				2006492423FD4956005E3F7D /* PersistenceProvider.swift in Sources */,
 				20BFCB3C23FCFF2800A0E599 /* SceneDelegate.swift in Sources */,
