@@ -21,3 +21,11 @@ let largeImage: String?
 }
 
 extension Article: Equatable {}
+
+extension Article {
+  
+var hasImage: Bool {
+  image != nil
+}
+  
+} // extension Article

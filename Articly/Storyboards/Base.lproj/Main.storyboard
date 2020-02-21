@@ -31,7 +31,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="250" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTu-f6-ihc">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xTu-f6-ihc">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -86,6 +86,61 @@
                                             <outlet property="bannerImageView" destination="y3X-sn-R9P" id="lAb-d0-JTj"/>
                                             <outlet property="dateLabel" destination="H5e-Ua-Gfd" id="0dJ-lS-inX"/>
                                             <outlet property="titleLabel" destination="Gbh-dB-wq4" id="VlS-hX-ba5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="com.example.Articly.SimpleArticleTableViewCell" rowHeight="116" id="SgP-h8-6Ck" customClass="SimpleArticleTableViewCell" customModule="Articly" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="278" width="414" height="116"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SgP-h8-6Ck" id="lw6-xr-Hia">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="116"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3i-gk-DyQ">
+                                                    <rect key="frame" x="10" y="5" width="394" height="106"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpb-UC-IpY">
+                                                            <rect key="frame" x="10" y="46" width="374" height="50"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="50" id="T5J-6E-VDg"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LdS-rs-rDE">
+                                                            <rect key="frame" x="10" y="8" width="374" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailing" secondItem="hpb-UC-IpY" secondAttribute="trailing" constant="10" id="64n-R8-azN"/>
+                                                        <constraint firstItem="LdS-rs-rDE" firstAttribute="leading" secondItem="d3i-gk-DyQ" secondAttribute="leading" constant="10" id="Nzi-Gj-JOY"/>
+                                                        <constraint firstItem="LdS-rs-rDE" firstAttribute="top" secondItem="d3i-gk-DyQ" secondAttribute="top" constant="8" id="aPl-aa-dxn"/>
+                                                        <constraint firstAttribute="bottom" secondItem="hpb-UC-IpY" secondAttribute="bottom" constant="10" id="eSP-bK-rJe"/>
+                                                        <constraint firstItem="hpb-UC-IpY" firstAttribute="leading" secondItem="d3i-gk-DyQ" secondAttribute="leading" constant="10" id="iwB-aC-4Pf"/>
+                                                        <constraint firstAttribute="trailing" secondItem="LdS-rs-rDE" secondAttribute="trailing" constant="10" id="rZw-wn-0U7"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="d3i-gk-DyQ" secondAttribute="bottom" constant="5" id="4oQ-vs-rxm"/>
+                                                <constraint firstItem="d3i-gk-DyQ" firstAttribute="leading" secondItem="lw6-xr-Hia" secondAttribute="leading" constant="10" id="cqR-ZQ-jQf"/>
+                                                <constraint firstAttribute="trailing" secondItem="d3i-gk-DyQ" secondAttribute="trailing" constant="10" id="mhC-Rx-o2p"/>
+                                                <constraint firstItem="d3i-gk-DyQ" firstAttribute="top" secondItem="lw6-xr-Hia" secondAttribute="top" constant="5" id="zcI-7d-B2Y"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="ArticleCell">
+                                            <bool key="isElement" value="YES"/>
+                                        </accessibility>
+                                        <connections>
+                                            <outlet property="containerView" destination="d3i-gk-DyQ" id="Qbc-PF-H7p"/>
+                                            <outlet property="dateLabel" destination="LdS-rs-rDE" id="j5K-2P-h4s"/>
+                                            <outlet property="titleLabel" destination="hpb-UC-IpY" id="boM-Gq-LI9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

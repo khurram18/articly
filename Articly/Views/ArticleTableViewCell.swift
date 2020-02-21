@@ -30,7 +30,7 @@ override func prepareForReuse() {
   titleLabel.text = nil
   dateLabel.text = nil
   bannerImageView.af_cancelImageRequest()
-  bannerImageView.image = nil
+  bannerImageView.image = #imageLiteral(resourceName: "placeholder")
 }
   
 override func awakeFromNib() {
