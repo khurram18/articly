@@ -32,13 +32,11 @@ private let indicatorView: UIActivityIndicatorView = {
 }()
 private var isLoadingObservation: NSKeyValueObservation?
 private var userMessageObservation: NSKeyValueObservation?
-private var tableViewContentOffsetObservation: NSKeyValueObservation?
   
 override func viewDidLoad() {
   super.viewDidLoad()
   confirgureSearch()
   configureTableView()
-  configureTopButton()
 }
 override func viewDidAppear(_ animated: Bool) {
   super.viewDidAppear(animated)
@@ -48,20 +46,11 @@ override func viewWillDisappear(_ animated: Bool) {
   super.viewWillDisappear(animated)
   removeObservers()
 }
-  
-private func configureTopButton() {
-  scrollToTopButton.layer.cornerRadius = 12.5
-  scrollToTopButton.backgroundColor = UIColor(red: CGFloat(3) / CGFloat(255), green: CGFloat(152) / CGFloat(255), blue: CGFloat(252) / CGFloat(255), alpha: CGFloat(0.8))
-  scrollToTopButton.addTarget(self, action: #selector(onScrollToTopButtonTap), for: .touchUpInside)
-  tableViewContentOffsetObservation = tableView.observe(\UITableView.contentOffset, options: [.new]) { [weak self] _, change in
-    self?.updateScrollToTopButtonVisibility()
-  }
-}
+
 private func confirgureSearch() {
   searchController.obscuresBackgroundDuringPresentation = false
   searchController.searchBar.placeholder = "Search Articles"
   navigationItem.searchController = searchController
-  navigationItem.hidesSearchBarWhenScrolling = false
   searchController.searchBar.delegate = searchBarDelegate
   definesPresentationContext = true
 }
@@ -74,7 +63,6 @@ private func configureTableView() {
 private func removeObservers() {
   isLoadingObservation = nil
   userMessageObservation = nil
-  tableViewContentOffsetObservation = nil
 }
 private func observeViewModel() {
   

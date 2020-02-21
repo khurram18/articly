@@ -34,7 +34,6 @@
 		20419F9323FFDF3600F7F705 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F9223FFDF3600F7F705 /* DependencyManager.swift */; };
 		20419F9523FFDFEC00F7F705 /* AppNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F9423FFDFEC00F7F705 /* AppNavigation.swift */; };
 		20419F9823FFEE7500F7F705 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F9723FFEE7500F7F705 /* UIViewController.swift */; };
-		20419F9F2400083600F7F705 /* ArticlesViewController+ScrollToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20419F9E2400083600F7F705 /* ArticlesViewController+ScrollToTop.swift */; };
 		205DCC7123FD03D300AD452A /* NetworkClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; };
 		205DCC7223FD03D300AD452A /* NetworkClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 205DCC6A23FD038800AD452A /* NetworkClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		20B8ECF023FD3CB000E8D360 /* ArticlesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */; };
@@ -118,7 +117,6 @@
 		20419F9223FFDF3600F7F705 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		20419F9423FFDFEC00F7F705 /* AppNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigation.swift; sourceTree = "<group>"; };
 		20419F9723FFEE7500F7F705 /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
-		20419F9E2400083600F7F705 /* ArticlesViewController+ScrollToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArticlesViewController+ScrollToTop.swift"; sourceTree = "<group>"; };
 		205DCC6423FD038700AD452A /* NetworkClient.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = NetworkClient.xcodeproj; path = NetworkClient/NetworkClient.xcodeproj; sourceTree = "<group>"; };
 		20B8ECEF23FD3CB000E8D360 /* ArticlesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlesViewModel.swift; sourceTree = "<group>"; };
 		20B8ECF323FD3EB100E8D360 /* AppStateNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateNavigation.swift; sourceTree = "<group>"; };
@@ -193,7 +191,6 @@
 				20419F8E23FFB91C00F7F705 /* ArticlesTableViewDataSourcePrefetching.swift */,
 				20419F6823FD91B100F7F705 /* ArticlesTableViewDelegate.swift */,
 				20BFCB3D23FCFF2800A0E599 /* ArticlesViewController.swift */,
-				20419F9E2400083600F7F705 /* ArticlesViewController+ScrollToTop.swift */,
 				20419F7C23FE852200F7F705 /* ArticlesViewController+UserMessage.swift */,
 			);
 			path = ArticlesList;
@@ -504,7 +501,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				20BFCB4423FCFF2800A0E599 /* Articly.xcdatamodeld in Sources */,
-				20419F9F2400083600F7F705 /* ArticlesViewController+ScrollToTop.swift in Sources */,
 				2006492E23FD4C64005E3F7D /* Article+CoreData.swift in Sources */,
 				2006492B23FD4B61005E3F7D /* CoreDataPersistence.swift in Sources */,
 				20B8ECF023FD3CB000E8D360 /* ArticlesViewModel.swift in Sources */,

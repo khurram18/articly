@@ -164,24 +164,12 @@
                                     <constraint firstItem="b9q-AO-MgQ" firstAttribute="top" secondItem="IEY-gA-70e" secondAttribute="top" id="rrb-0A-JxL"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EyB-E7-MAn">
-                                <rect key="frame" x="147" y="38" width="120" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="120" id="STt-ry-r6w"/>
-                                    <constraint firstAttribute="height" constant="25" id="sAa-8u-LMY"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                <state key="normal" title="Scroll To Top">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <accessibility key="accessibilityConfiguration">
                             <bool key="isElement" value="YES"/>
                         </accessibility>
                         <constraints>
-                            <constraint firstItem="EyB-E7-MAn" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="1SL-yU-otz"/>
                             <constraint firstItem="xTu-f6-ihc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="4ph-iE-EXg"/>
                             <constraint firstItem="xTu-f6-ihc" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="Dxd-Cv-gju"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xTu-f6-ihc" secondAttribute="trailing" id="Hyk-Zm-S1q"/>
@@ -189,7 +177,6 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IEY-gA-70e" secondAttribute="trailing" id="TjZ-Qc-h5Q"/>
                             <constraint firstItem="IEY-gA-70e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Y6c-JO-dvi"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="IEY-gA-70e" secondAttribute="top" constant="50" id="qtI-3y-Ten"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="EyB-E7-MAn" secondAttribute="top" constant="50" id="s7m-Ko-aiF"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -198,10 +185,8 @@
                         <outlet property="messageLabel" destination="b9q-AO-MgQ" id="ahH-rY-sDI"/>
                         <outlet property="messageView" destination="IEY-gA-70e" id="eef-Im-BuS"/>
                         <outlet property="messageViewTopConstraint" destination="qtI-3y-Ten" id="WMP-35-Zva"/>
-                        <outlet property="scrollToTopButton" destination="EyB-E7-MAn" id="kQ7-pJ-Chy"/>
                         <outlet property="tableView" destination="xTu-f6-ihc" id="6Yw-1b-Kim"/>
                         <outlet property="tableViewTopConstraint" destination="S0s-fv-323" id="RM5-oO-fcV"/>
-                        <outlet property="topButtonTopConstraint" destination="s7m-Ko-aiF" id="lkF-La-DYs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
