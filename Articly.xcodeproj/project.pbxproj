@@ -45,6 +45,8 @@
 		20BFCB4423FCFF2800A0E599 /* Articly.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 20BFCB4223FCFF2800A0E599 /* Articly.xcdatamodeld */; };
 		20BFCB4623FCFF2900A0E599 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20BFCB4523FCFF2900A0E599 /* Assets.xcassets */; };
 		20BFCB4923FCFF2900A0E599 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BFCB4723FCFF2900A0E599 /* LaunchScreen.storyboard */; };
+		20F3BDA22401B2B800118176 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDA12401B2B800118176 /* Date.swift */; };
+		20F3BDA32401B2B800118176 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDA12401B2B800118176 /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,7 @@
 		20BFCB5A23FCFF2900A0E599 /* ArticlyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ArticlyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20BFCB5E23FCFF2900A0E599 /* ArticlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlyUITests.swift; sourceTree = "<group>"; };
 		20BFCB6023FCFF2900A0E599 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		20F3BDA12401B2B800118176 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -217,6 +220,7 @@
 			isa = PBXGroup;
 			children = (
 				20419F9723FFEE7500F7F705 /* UIViewController.swift */,
+				20F3BDA12401B2B800118176 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -511,6 +515,7 @@
 				20419F9123FFC73900F7F705 /* SimpleArticleTableViewCell.swift in Sources */,
 				20BFCB3A23FCFF2800A0E599 /* AppDelegate.swift in Sources */,
 				2006493123FD5415005E3F7D /* Article+Network.swift in Sources */,
+				20F3BDA22401B2B800118176 /* Date.swift in Sources */,
 				20419F7023FE40A300F7F705 /* ArticleDetailViewController.swift in Sources */,
 				2006492823FD4B0F005E3F7D /* Article.swift in Sources */,
 				20419F8F23FFB91C00F7F705 /* ArticlesTableViewDataSourcePrefetching.swift in Sources */,
@@ -534,6 +539,7 @@
 			files = (
 				20419F8D23FEC8C000F7F705 /* MockPersistenceProvider.swift in Sources */,
 				20419F8B23FEC60400F7F705 /* MockArticleService.swift in Sources */,
+				20F3BDA32401B2B800118176 /* Date.swift in Sources */,
 				20419F8723FEB86500F7F705 /* defaultExpectation.swift in Sources */,
 				20419F8423FEB20200F7F705 /* PersistenceTests.swift in Sources */,
 				20419F8923FEC5B700F7F705 /* ViewModelTests.swift in Sources */,
