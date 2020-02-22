@@ -8,15 +8,16 @@
 
 import Foundation
 
-final class ArticleViewModel {
-  
-private let article: Article
-private var dateFormatter: DateFormatter = {
+private let dateFormatter: DateFormatter = {
   let formatter = DateFormatter()
   formatter.dateStyle = .long
   formatter.timeStyle = .short
   return formatter
 }()
+
+final class ArticleViewModel {
+  
+private let article: Article
   
 var heading: String {
   article.headline

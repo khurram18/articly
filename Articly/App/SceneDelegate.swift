@@ -21,7 +21,7 @@ func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options conn
 }
 
 func sceneDidEnterBackground(_ scene: UIScene) {
-  (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
+  AppDelegate.instance.saveContext()
 }
   
 } // class SceneDelegate

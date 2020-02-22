@@ -9,7 +9,9 @@
 import Foundation
 
 extension Article {
+  
 func toCellViewModel() -> ArticleTableViewCellViewModel {
   ArticleTableViewCellViewModel(title: headline, publishedDate: publishedDate, image: image)
 }
+  
 } // extension Article

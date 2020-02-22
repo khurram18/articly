@@ -12,11 +12,12 @@ import Foundation
 private let baseUrl = "https://nytimes.com/"
 
 extension ApiArticle {
+  
 func toArticle() -> Article {
   Article(headline: headlineString, abstract: abstract, webUrl: webUrl, leadParagraph: leadParagraph, publishedDate: publishedDate, uri: uri, image: image, largeImage: largeImage)
 }
   
-// There are several images availabe we will just only two for image and largeImage
+// There are several images availabe we will only use two for image and largeImage
   
 private var image: String? {
   for media in multimedia {
@@ -37,9 +38,6 @@ private var largeImage: String? {
 }
   
 private var headlineString: String {
-  if let printHeadline = headline.printHeadline {
-    return printHeadline
-  }
-  return headline.main
+  headline.printHeadline ?? headline.main
 }
 }

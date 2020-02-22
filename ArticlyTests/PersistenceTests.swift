@@ -12,15 +12,15 @@ import XCTest
 
 final class PersistenceTests: XCTestCase {
 
-var sut: CoreDataPersistence?
+private var sut: CoreDataPersistence?
   
 //MARK: mock in-memory persistant store
-lazy var managedObjectModel: NSManagedObjectModel = {
+private lazy var managedObjectModel: NSManagedObjectModel = {
     let managedObjectModel = NSManagedObjectModel.mergedModel(from: [Bundle(for: type(of: self))] )!
     return managedObjectModel
 }()
 
-lazy var mockPersistantContainer: NSPersistentContainer = {
+private lazy var mockPersistantContainer: NSPersistentContainer = {
     
     let container = NSPersistentContainer(name: "Articly", managedObjectModel: self.managedObjectModel)
     let description = NSPersistentStoreDescription()
@@ -122,4 +122,4 @@ func testPastDelete() {
   wait(for: [exp], timeout: 3)
 }
   
-}
+} // class PersistenceTests

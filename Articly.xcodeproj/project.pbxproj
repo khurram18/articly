@@ -47,6 +47,10 @@
 		20BFCB4923FCFF2900A0E599 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20BFCB4723FCFF2900A0E599 /* LaunchScreen.storyboard */; };
 		20F3BDA22401B2B800118176 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDA12401B2B800118176 /* Date.swift */; };
 		20F3BDA32401B2B800118176 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDA12401B2B800118176 /* Date.swift */; };
+		20F3BDAA2401B75C00118176 /* cleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDA92401B75C00118176 /* cleanup.swift */; };
+		20F3BDAB2401B75C00118176 /* cleanup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDA92401B75C00118176 /* cleanup.swift */; };
+		20F3BDAD2401BAFF00118176 /* CoreArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDAC2401BAFF00118176 /* CoreArticle.swift */; };
+		20F3BDAE2401BAFF00118176 /* CoreArticle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDAC2401BAFF00118176 /* CoreArticle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -137,6 +141,8 @@
 		20BFCB5E23FCFF2900A0E599 /* ArticlyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticlyUITests.swift; sourceTree = "<group>"; };
 		20BFCB6023FCFF2900A0E599 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		20F3BDA12401B2B800118176 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		20F3BDA92401B75C00118176 /* cleanup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cleanup.swift; sourceTree = "<group>"; };
+		20F3BDAC2401BAFF00118176 /* CoreArticle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreArticle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +175,7 @@
 		2006492023FD491E005E3F7D /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				20F3BDAC2401BAFF00118176 /* CoreArticle.swift */,
 				2006492A23FD4B61005E3F7D /* CoreDataPersistence.swift */,
 				2006492323FD4956005E3F7D /* PersistenceProvider.swift */,
 			);
@@ -219,8 +226,8 @@
 		20419F9623FFEE6400F7F705 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				20419F9723FFEE7500F7F705 /* UIViewController.swift */,
 				20F3BDA12401B2B800118176 /* Date.swift */,
+				20419F9723FFEE7500F7F705 /* UIViewController.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -275,6 +282,7 @@
 				20BFCB3923FCFF2800A0E599 /* AppDelegate.swift */,
 				20419F9423FFDFEC00F7F705 /* AppNavigation.swift */,
 				20B8ECF323FD3EB100E8D360 /* AppStateNavigation.swift */,
+				20F3BDA92401B75C00118176 /* cleanup.swift */,
 				20419F9223FFDF3600F7F705 /* DependencyManager.swift */,
 				20BFCB3B23FCFF2800A0E599 /* SceneDelegate.swift */,
 			);
@@ -513,6 +521,7 @@
 				2006494C23FD7930005E3F7D /* ArticleTableViewCellViewModel.swift in Sources */,
 				20BFCB3E23FCFF2800A0E599 /* ArticlesViewController.swift in Sources */,
 				20419F9123FFC73900F7F705 /* SimpleArticleTableViewCell.swift in Sources */,
+				20F3BDAD2401BAFF00118176 /* CoreArticle.swift in Sources */,
 				20BFCB3A23FCFF2800A0E599 /* AppDelegate.swift in Sources */,
 				2006493123FD5415005E3F7D /* Article+Network.swift in Sources */,
 				20F3BDA22401B2B800118176 /* Date.swift in Sources */,
@@ -529,6 +538,7 @@
 				20419F7D23FE852200F7F705 /* ArticlesViewController+UserMessage.swift in Sources */,
 				20419F6923FD91B100F7F705 /* ArticlesTableViewDelegate.swift in Sources */,
 				20419F7323FE416500F7F705 /* ArticleViewModel.swift in Sources */,
+				20F3BDAA2401B75C00118176 /* cleanup.swift in Sources */,
 				2006494523FD783B005E3F7D /* ArticlesTableViewDataSource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -537,6 +547,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20F3BDAE2401BAFF00118176 /* CoreArticle.swift in Sources */,
+				20F3BDAB2401B75C00118176 /* cleanup.swift in Sources */,
 				20419F8D23FEC8C000F7F705 /* MockPersistenceProvider.swift in Sources */,
 				20419F8B23FEC60400F7F705 /* MockArticleService.swift in Sources */,
 				20F3BDA32401B2B800118176 /* Date.swift in Sources */,

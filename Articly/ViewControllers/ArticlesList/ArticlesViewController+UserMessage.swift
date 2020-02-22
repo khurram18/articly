@@ -13,6 +13,7 @@ let animationDuration = 0.5
 let messageDisplayDuration = 5.0
 
 extension ArticlesViewController {
+  
 func showUserMessage(_ userMessage: String) {
   messageLabel.text = userMessage
   messageView.isHidden = false
@@ -26,6 +27,7 @@ func showUserMessage(_ userMessage: String) {
     self.hideMessageView()
   })
 }
+  
 private func hideMessageView() {
   DispatchQueue.main.asyncAfter(deadline: .now() + messageDisplayDuration) {
     if self.isViewVisible {

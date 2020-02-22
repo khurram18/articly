@@ -10,21 +10,21 @@ import Foundation
 
 struct ArticleTableViewCellViewModel {
   
-static var dateFormatter: DateFormatter = {
-  let formatter = DateFormatter()
-  formatter.dateStyle = .short
-  formatter.timeStyle = .short
-  return formatter
-}()
-  
 let title: String
 let publishedDate: String
 let image: String?
   
 init(title: String, publishedDate: Date, image: String?) {
   self.title = title
-  self.publishedDate = ArticleTableViewCellViewModel.dateFormatter.string(from: publishedDate)
+  self.publishedDate = cellDateFormatter().string(from: publishedDate)
   self.image = image
 }
   
+} // struct ArticleTableViewCellViewModel
+
+private func cellDateFormatter() -> DateFormatter {
+  let formatter = DateFormatter()
+  formatter.dateStyle = .short
+  formatter.timeStyle = .short
+  return formatter
 }

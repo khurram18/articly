@@ -10,7 +10,7 @@ import UIKit
 
 final class ArticlesTableViewDataSourcePrefetching: NSObject, UITableViewDataSourcePrefetching {
 
-/// If user has scrolled past 75% rows then we will fetch next articles
+/// If user has scrolled past 75% rows then we will fetch next page of articles
 private let threshold: Float = 0.75
   
 private weak var viewModel: ArticlesViewModel?

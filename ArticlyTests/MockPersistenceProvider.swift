@@ -37,7 +37,7 @@ func delete(article: Article, completion: @escaping (Bool) -> Void) {
     completion(self.shouldDelete)
   }
 }
-func deleteOlder(then date: Date) {
   
-}
-}
+func deleteOlder(then date: Date) {}
+  
+} // class MockPersistenceProvider

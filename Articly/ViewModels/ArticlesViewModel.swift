@@ -5,6 +5,7 @@
 //  Created by Khurram on 19/02/2020.
 //  Copyright © 2020 Example. All rights reserved.
 //
+
 import NetworkClient
 import Foundation
 
@@ -12,12 +13,14 @@ final class ArticlesViewModel: NSObject {
   
 private let articlesService: ArticleService
 private let persistenceProvider: PersistenceProvider
+  
 private var page = 0
 private var query = ""
 private var meta = Meta(hits: 0, offset: 0)
 
 var onArticleSelected: ((Article) -> Void)?
 var articlesArray = [Article]()
+  
 @objc dynamic var isLoading = false
 @objc dynamic var userMessage = ""
   

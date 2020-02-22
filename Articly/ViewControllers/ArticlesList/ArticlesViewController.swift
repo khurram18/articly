@@ -23,11 +23,13 @@ var tableViewDelegate: UITableViewDelegate?
 var tableViewDataSourcePrefetching: UITableViewDataSourcePrefetching?
   
 private let searchController = UISearchController(searchResultsController: nil)
+  
 private let indicatorView: UIActivityIndicatorView = {
   let view = UIActivityIndicatorView()
   view.style = .large
   return view
 }()
+  
 private let emptyView: UIView = {
   let label = UILabel()
   label.text = "Please use search bar to search for articles."
@@ -36,6 +38,7 @@ private let emptyView: UIView = {
   label.font = UIFont.preferredFont(forTextStyle: .title1)
   return label
 }()
+  
 private var isLoadingObservation: NSKeyValueObservation?
 private var userMessageObservation: NSKeyValueObservation?
   
@@ -44,16 +47,22 @@ override func viewDidLoad() {
   confirgureSearch()
   configureTableView()
 }
+  
 override func viewDidAppear(_ animated: Bool) {
   super.viewDidAppear(animated)
   observeViewModel()
   checkEmptyTableView()
 }
+  
 override func viewWillDisappear(_ animated: Bool) {
   super.viewWillDisappear(animated)
   removeObservers()
 }
+  
+} // class ArticlesViewController
 
+extension ArticlesViewController {
+  
 private func confirgureSearch() {
   searchController.obscuresBackgroundDuringPresentation = false
   searchController.searchBar.placeholder = "Search Articles"
@@ -61,15 +70,18 @@ private func confirgureSearch() {
   searchController.searchBar.delegate = searchBarDelegate
   definesPresentationContext = true
 }
+  
 private func configureTableView() {
   tableView.delegate = tableViewDelegate
   tableView.dataSource = tableViewDataSource
   tableView.prefetchDataSource = tableViewDataSourcePrefetching
 }
+  
 private func removeObservers() {
   isLoadingObservation = nil
   userMessageObservation = nil
 }
+  
 private func observeViewModel() {
   
   guard let viewModel = viewModel else { return }
@@ -104,6 +116,7 @@ private func showLoadingIndicator(_ show: Bool) {
     indicatorView.stopAnimating()
   }
 }
+  
 private func checkEmptyTableView() {
   if tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) == 0 {
     tableView.backgroundView = emptyView
@@ -111,4 +124,5 @@ private func checkEmptyTableView() {
     tableView.backgroundView = nil
   }
 }
-}
+  
+} // extension ArticlesViewController

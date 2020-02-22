@@ -27,4 +27,4 @@ func search(query: String, page: Int, completion: @escaping (Result<SearchRespon
   }
 }
   
-}
+} // class MockArticleService

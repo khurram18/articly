@@ -10,6 +10,7 @@ import CoreData
 import Foundation
 
 extension Article {
+  
 func updateTo(_ coreArticle: CoreArticle) {
   
   coreArticle.headline = headline
@@ -21,4 +22,5 @@ func updateTo(_ coreArticle: CoreArticle) {
   coreArticle.image = image
   coreArticle.largeImage = largeImage
 }
-}
+  
+} // extension Article

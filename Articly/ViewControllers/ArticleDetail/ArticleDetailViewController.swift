@@ -9,7 +9,7 @@
 import AlamofireImage
 import UIKit
 
-class ArticleDetailViewController: UIViewController {
+final class ArticleDetailViewController: UIViewController {
 
 static let storyboardID = "articleDetailViewControllerStoryboardID"
   
@@ -17,6 +17,7 @@ static let storyboardID = "articleDetailViewControllerStoryboardID"
 @IBOutlet weak var titleLabel: UILabel!
 @IBOutlet weak var dateLabel: UILabel!
 @IBOutlet weak var imageView: UIImageView!
+  
 var viewModel: ArticleViewModel?
   
 override func viewDidLoad() {
@@ -33,7 +34,6 @@ override func viewDidLoad() {
   
 private func updateView() {
   guard let viewModel = viewModel else { return }
-  
   if let urlString = viewModel.imageUrl, let url = URL(string: urlString) {
     imageView.af_setImage(withURL: url, placeholderImage: #imageLiteral(resourceName: "placeholder"), filter: AspectScaledToFillSizeFilter(size: imageView.bounds.size), imageTransition: UIImageView.ImageTransition.crossDissolve(0.5), runImageTransitionIfCached: false)
   }
@@ -42,4 +42,4 @@ private func updateView() {
   detailTextView.text = viewModel.detailText
 }
   
-}
+} // class ArticleDetailViewController

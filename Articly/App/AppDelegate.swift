@@ -20,7 +20,7 @@ func application(_ application: UIApplication, didFinishLaunchingWithOptions lau
   return true
 }
 
-  // MARK: UISceneSession Lifecycle
+// MARK: UISceneSession Lifecycle
 
 func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
   UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)
@@ -81,19 +81,9 @@ static var instance: AppDelegate {
 
 private func registerCleanupTask() {
   BGTaskScheduler.shared.register(forTaskWithIdentifier: cleanupTaskIdentifier, using: nil) { task in
-    self.cleanup(task)
+    cleanup(task: task, persistentContainer: self.persistentContainer)
   }
   try? BGTaskScheduler.shared.submit(BGProcessingTaskRequest(identifier: cleanupTaskIdentifier))
-}
-  
-private func cleanup(_ task: BGTask) {
-  defer {
-    task.setTaskCompleted(success: true)
-  }
-  task.expirationHandler = {}
-  let persistence = CoreDataPersistence(persistentContainer: persistentContainer)
-  guard let pastDate = Date.getPastDate() else { return }
-  persistence.deleteOlder(then: pastDate)
 }
   
 } // extension AppDelegate

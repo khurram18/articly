@@ -10,8 +10,9 @@ import CoreData
 import Foundation
 
 final class CoreDataPersistence: PersistenceProvider {
+  
 private let persistentContainer: NSPersistentContainer
-private let dispatchQueue = DispatchQueue(label: "com.example.Articly.DispatchQueue")
+private let dispatchQueue = DispatchQueue(label: "com.example.Articly.CoreDataPersistence.DispatchQueue")
 
 init(persistentContainer: NSPersistentContainer) {
   self.persistentContainer = persistentContainer
@@ -92,15 +93,4 @@ private func getCore(from article: Article, context: NSManagedObjectContext) -> 
   return nil
 }
   
-}
-
-extension CoreArticle {
-func toArticle() -> Article {
-  Article(headline: headline ?? "", abstract: abstract ?? "", webUrl: webUrl ?? "", leadParagraph: leadParagraph ?? "", publishedDate: publishedDate ?? Date(), uri: uri ?? "", image: image, largeImage: largeImage)
-}
-static func newInstance(context: NSManagedObjectContext) -> CoreArticle {
-  let coreArticle = NSEntityDescription.insertNewObject(forEntityName: "CoreArticle", into: context) as! CoreArticle
-  coreArticle.createdAt = Date()
-  return coreArticle
-}
-}
+} // class CoreDataPersistence

@@ -17,16 +17,9 @@ static let identifier = "com.example.Articly.SimpleArticleTableViewCell"
 @IBOutlet weak var titleLabel: UILabel!
   
 override func awakeFromNib() {
-    super.awakeFromNib()
-    // Initialization code
+  super.awakeFromNib()
   containerView.layer.cornerRadius = 20
   containerView.clipsToBounds = true
-}
-
-override func setSelected(_ selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-
-    // Configure the view for the selected state
 }
   
 func configure(_ viewModel: ArticleTableViewCellViewModel) {
@@ -34,4 +27,4 @@ func configure(_ viewModel: ArticleTableViewCellViewModel) {
   dateLabel.text = viewModel.publishedDate
 }
 
-}
+} // class SimpleArticleTableViewCell

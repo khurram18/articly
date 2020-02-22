@@ -14,8 +14,9 @@ final class DependencyManager {
 weak var appNavigation: AppNavigation?
   
 func resolve(for viewController: ArticlesViewController) {
+  let coreDataPersistence  = CoreDataPersistence(persistentContainer: AppDelegate.instance.persistentContainer)
   let articlesViewModel = ArticlesViewModel(articlesService: getArticlesService(),
-                                            persistenceProvider: CoreDataPersistence(persistentContainer: AppDelegate.instance.persistentContainer))
+                                            persistenceProvider: coreDataPersistence)
   articlesViewModel.onArticleSelected = { [weak self] article in
     self?.appNavigation?.showArticleDetail(article: article)
   }
