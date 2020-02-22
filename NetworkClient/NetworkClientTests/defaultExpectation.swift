@@ -10,7 +10,9 @@ import Foundation
 import XCTest
 
 extension XCTestCase {
+  
 func defaultExpectation(_ functionName: String = #function) -> XCTestExpectation {
   expectation(description: functionName)
 }
+  
 } // extension XCTestCase

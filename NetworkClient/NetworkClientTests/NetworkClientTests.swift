@@ -10,7 +10,8 @@ import XCTest
 @testable import NetworkClient
 
 final class NetworkClientTests: XCTestCase {
-var articleService: RestArticleService?
+  
+private var articleService: RestArticleService?
   
 override func setUp() {
   articleService = RestArticleService()
