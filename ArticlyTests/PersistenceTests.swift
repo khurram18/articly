@@ -46,7 +46,7 @@ override func setUp() {
 
 func testSave() {
   let exp = defaultExpectation()
-  sut?.persist(articles: [Article(abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)]) { success in
+  sut?.persist(articles: [Article(headline: "", abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)]) { success in
     if success {
       exp.fulfill()
     }
@@ -56,7 +56,7 @@ func testSave() {
   
 func testRetrive() {
   let exp = defaultExpectation()
-  let article = Article(abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
+  let article = Article(headline: "", abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
   sut?.persist(articles: [article], completion: { _ in
     let persisted = self.sut?.getPersisted(recentFirst: true)
     let success = persisted != nil && persisted!.count == 1 && persisted![0] == article
@@ -68,9 +68,9 @@ func testRetrive() {
 }
 func testUpdate() {
   let exp = defaultExpectation()
-  let article = Article(abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
+  let article = Article(headline: "", abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
   sut?.persist(articles: [article], completion: { _ in
-    let updatedArticle = Article(abstract: "123", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
+    let updatedArticle = Article(headline: "", abstract: "123", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
     self.sut?.persist(articles: [updatedArticle]) { _ in
       let persisted = self.sut?.getPersisted(recentFirst: true)
       let success = persisted != nil && persisted!.count == 1 && persisted![0].abstract == "123"
@@ -83,7 +83,7 @@ func testUpdate() {
 }
 func testDelete() {
   let exp = defaultExpectation()
-  let article = Article(abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
+  let article = Article(headline: "", abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
   sut?.persist(articles: [article]) { persistSuccess in
     if persistSuccess {
       self.sut?.delete(article: article) { deleteSuccess in
@@ -99,4 +99,27 @@ func testDelete() {
   }
   wait(for: [exp], timeout: 3)
 }
+  
+func testPastDelete() {
+  let dateFormatter = DateFormatter()
+  dateFormatter.dateFormat = "dd/MM/yyyy"
+  
+  let date = dateFormatter.date(from: "10/03/2020")!
+  
+  let article = Article(headline: "", abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "1", image: nil, largeImage: nil)
+  
+  let exp = defaultExpectation()
+  
+  sut?.persist(articles: [article]) { success in
+    if success {
+      self.sut?.deleteOlder(then: date)
+      let persisted = self.sut?.getPersisted(recentFirst: true)
+      if persisted == nil || persisted?.count == 0 {
+        exp.fulfill()
+      }
+    }
+  }
+  wait(for: [exp], timeout: 3)
+}
+  
 }

@@ -302,8 +302,8 @@
 		20BFCB3823FCFF2800A0E599 /* Articly */ = {
 			isa = PBXGroup;
 			children = (
-				20419F9623FFEE6400F7F705 /* Extensions */,
 				20B8ECF223FD3E9E00E8D360 /* App */,
+				20419F9623FFEE6400F7F705 /* Extensions */,
 				2006492623FD4A63005E3F7D /* Models */,
 				2006492023FD491E005E3F7D /* Persistence */,
 				20B8ECEA23FD34C100E8D360 /* Storyboards */,

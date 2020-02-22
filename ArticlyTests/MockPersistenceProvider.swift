@@ -10,7 +10,7 @@
 import Foundation
 
 final class MockPersistenceProvider: PersistenceProvider {
- 
+  
 var shouldPersist = false
 var shouldReturnPersisted = false
 var shouldDelete = false
@@ -36,5 +36,8 @@ func delete(article: Article, completion: @escaping (Bool) -> Void) {
   DispatchQueue.main.async {
     completion(self.shouldDelete)
   }
+}
+func deleteOlder(then date: Date) {
+  
 }
 }

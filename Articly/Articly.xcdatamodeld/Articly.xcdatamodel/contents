@@ -2,6 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoreArticle" representedClassName="CoreArticle" syncable="YES" codeGenerationType="class">
         <attribute name="abstract" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="headline" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="String"/>
         <attribute name="largeImage" optional="YES" attributeType="String"/>
@@ -11,6 +12,6 @@
         <attribute name="webUrl" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="CoreArticle" positionX="-63" positionY="-18" width="128" height="163"/>
+        <element name="CoreArticle" positionX="-63" positionY="-18" width="128" height="178"/>
     </elements>
 </model>

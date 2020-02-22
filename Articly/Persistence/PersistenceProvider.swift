@@ -13,5 +13,5 @@ protocol PersistenceProvider {
 func persist(articles: [Article], completion: @escaping (Bool) -> Void)
 func getPersisted(recentFirst: Bool) -> [Article]?
 func delete(article: Article, completion: @escaping (Bool) -> Void)
-  
+func deleteOlder(then date: Date)
 }

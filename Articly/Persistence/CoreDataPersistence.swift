@@ -22,7 +22,7 @@ func persist(articles: [Article], completion: @escaping (Bool) -> Void) {
   dispatchQueue.async {
     var success = false
     for article in articles {
-      let coreArticle = self.getCore(from: article, context: context) ?? NSEntityDescription.insertNewObject(forEntityName: "CoreArticle", into: context) as! CoreArticle
+      let coreArticle = self.getCore(from: article, context: context) ?? CoreArticle.newInstance(context: context)
       article.updateTo(coreArticle)
     }
     do {
@@ -66,6 +66,21 @@ func delete(article: Article, completion: @escaping (Bool) -> Void) {
     }
   }
 }
+func deleteOlder(then date: Date) {
+  let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
+  fetchRequest.predicate = NSPredicate(format: "createdAt < %@", date as CVarArg)
+  do {
+    let context = persistentContainer.viewContext
+    let articles = try context.fetch(fetchRequest)
+    for article in articles {
+      context.delete(article)
+    }
+    try context.save()
+  } catch {
+    print(error)
+  }
+}
+  
 private func getCore(from article: Article, context: NSManagedObjectContext) -> CoreArticle? {
   let fetchRequest: NSFetchRequest<CoreArticle> = CoreArticle.fetchRequest()
   fetchRequest.predicate = NSPredicate(format: "uri LIKE[c] %@", article.uri)
@@ -82,5 +97,10 @@ private func getCore(from article: Article, context: NSManagedObjectContext) -> 
 extension CoreArticle {
 func toArticle() -> Article {
   Article(headline: headline ?? "", abstract: abstract ?? "", webUrl: webUrl ?? "", leadParagraph: leadParagraph ?? "", publishedDate: publishedDate ?? Date(), uri: uri ?? "", image: image, largeImage: largeImage)
+}
+static func newInstance(context: NSManagedObjectContext) -> CoreArticle {
+  let coreArticle = NSEntityDescription.insertNewObject(forEntityName: "CoreArticle", into: context) as! CoreArticle
+  coreArticle.createdAt = Date()
+  return coreArticle
 }
 }

@@ -12,7 +12,7 @@ import Foundation
 final class MockArticleService: ArticleService {
   
 private let searchResponse = SearchResponse(articles: [
-  ApiArticle(abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "", multimedia: [Multimedia(subtype: "", url: "", height: 0, width: 0)])
+  ApiArticle(abstract: "", webUrl: "", leadParagraph: "", publishedDate: Date(), uri: "", multimedia: [Multimedia(subtype: "", url: "", height: 0, width: 0)], headline: Headline(main: "", printHeadline: nil))
 ], meta: Meta(hits: 10, offset: 0))
   
 var shouldProvideError = false

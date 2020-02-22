@@ -13,4 +13,9 @@ public struct Headline: Decodable {
 public let main: String
 public let printHeadline: String?
   
+public init(main: String, printHeadline: String?) {
+  self.main = main
+  self.printHeadline = printHeadline
+}
+  
 }
