@@ -9,8 +9,10 @@
 import Foundation
 
 public struct Meta: Decodable {
+  
 public let hits: Int
 public let offset: Int
+  
 public init(hits: Int, offset: Int) {
   self.hits = hits
   self.offset = offset

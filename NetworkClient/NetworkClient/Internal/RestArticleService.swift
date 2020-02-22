@@ -21,7 +21,7 @@ func search(query: String, page: Int, completion: @escaping (Result<SearchRespon
         result = .failure(error)
       } else if let data = data {
         do {
-          let serverResponse = try JSONDecoder.defaultDecoder.decode(ServerResponse.self, from: data)
+          let serverResponse = try defaultDecoder.decode(ServerResponse.self, from: data)
           result = .success(SearchResponse(articles: serverResponse.response.docs, meta: serverResponse.response.meta))
         } catch {
           result = .failure(error)

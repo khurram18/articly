@@ -9,6 +9,7 @@
 import Foundation
 
 enum Router {
+  
 case searchArticles(query: String, pageNumber: Int)
   
 } // enum Router

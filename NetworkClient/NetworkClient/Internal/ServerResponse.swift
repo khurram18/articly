@@ -9,10 +9,14 @@
 import Foundation
 
 struct ServerResponse: Decodable {
+  
 let response: Response
+  
 }
 
 struct Response: Decodable {
+  
 let meta: Meta
 let docs: [ApiArticle]
+  
 }

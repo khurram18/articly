@@ -31,6 +31,7 @@ public init(abstract: String, webUrl: String, leadParagraph: String, publishedDa
 } // class Article
 
 extension ApiArticle: Decodable {
+  
 enum Keys: String, CodingKey {
   case abstract
   case webUrl = "web_url"

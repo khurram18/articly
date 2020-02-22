@@ -35,10 +35,10 @@
 		20B8ECDF23FD268400E8D360 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECDD23FD268400E8D360 /* ServerResponse.swift */; };
 		20B8ECE123FD270700E8D360 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECE023FD270700E8D360 /* Meta.swift */; };
 		20B8ECE223FD270700E8D360 /* Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECE023FD270700E8D360 /* Meta.swift */; };
-		20B8ECE523FD2A1A00E8D360 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECE423FD2A1A00E8D360 /* JSONDecoder.swift */; };
-		20B8ECE623FD2A1A00E8D360 /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECE423FD2A1A00E8D360 /* JSONDecoder.swift */; };
 		20B8ECEC23FD355C00E8D360 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECEB23FD355C00E8D360 /* SearchResponse.swift */; };
 		20B8ECED23FD355C00E8D360 /* SearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20B8ECEB23FD355C00E8D360 /* SearchResponse.swift */; };
+		20F3BDA72401B5CB00118176 /* defaultDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDA62401B5CB00118176 /* defaultDecoder.swift */; };
+		20F3BDA82401B5CB00118176 /* defaultDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20F3BDA62401B5CB00118176 /* defaultDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,8 +71,8 @@
 		20B8ECDB23FD1E6C00E8D360 /* defaultExpectation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultExpectation.swift; sourceTree = "<group>"; };
 		20B8ECDD23FD268400E8D360 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
 		20B8ECE023FD270700E8D360 /* Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Meta.swift; sourceTree = "<group>"; };
-		20B8ECE423FD2A1A00E8D360 /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		20B8ECEB23FD355C00E8D360 /* SearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResponse.swift; sourceTree = "<group>"; };
+		20F3BDA62401B5CB00118176 /* defaultDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = defaultDecoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,8 +146,8 @@
 		205DCC7823FD059500AD452A /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				20B8ECE323FD2A0500E8D360 /* Extensions */,
 				20B8ECCF23FD107A00E8D360 /* config.swift */,
+				20F3BDA62401B5CB00118176 /* defaultDecoder.swift */,
 				20B8ECD523FD10BE00E8D360 /* QueryItem.swift */,
 				205DCC7923FD05AD00AD452A /* RestArticleService.swift */,
 				20B8ECCC23FD0DA300E8D360 /* Router.swift */,
@@ -175,14 +175,6 @@
 				205DCC7523FD055A00AD452A /* ArticleService.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		20B8ECE323FD2A0500E8D360 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				20B8ECE423FD2A1A00E8D360 /* JSONDecoder.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -300,9 +292,9 @@
 				205DCC7623FD055A00AD452A /* ArticleService.swift in Sources */,
 				20B8ECCD23FD0DA300E8D360 /* Router.swift in Sources */,
 				20B8ECDE23FD268400E8D360 /* ServerResponse.swift in Sources */,
-				20B8ECE523FD2A1A00E8D360 /* JSONDecoder.swift in Sources */,
 				20B8ECE123FD270700E8D360 /* Meta.swift in Sources */,
 				20B8ECD023FD107A00E8D360 /* config.swift in Sources */,
+				20F3BDA72401B5CB00118176 /* defaultDecoder.swift in Sources */,
 				20419F7623FE4D3500F7F705 /* Multimedia.swift in Sources */,
 				20419F9A23FFF2F900F7F705 /* Headline.swift in Sources */,
 				20B8ECEC23FD355C00E8D360 /* SearchResponse.swift in Sources */,
@@ -318,13 +310,13 @@
 			files = (
 				20419F7723FE4D3500F7F705 /* Multimedia.swift in Sources */,
 				20B8ECED23FD355C00E8D360 /* SearchResponse.swift in Sources */,
+				20F3BDA82401B5CB00118176 /* defaultDecoder.swift in Sources */,
 				205DCC5923FD038700AD452A /* NetworkClientTests.swift in Sources */,
 				20419F9B23FFF2F900F7F705 /* Headline.swift in Sources */,
 				20B8ECE223FD270700E8D360 /* Meta.swift in Sources */,
 				205DCC6F23FD039A00AD452A /* NetworkClient.swift in Sources */,
 				205DCC7B23FD05AD00AD452A /* RestArticleService.swift in Sources */,
 				205DCC7723FD055A00AD452A /* ArticleService.swift in Sources */,
-				20B8ECE623FD2A1A00E8D360 /* JSONDecoder.swift in Sources */,
 				20B8ECD123FD107A00E8D360 /* config.swift in Sources */,
 				20B8ECCE23FD0DA300E8D360 /* Router.swift in Sources */,
 				20B8ECDA23FD185500E8D360 /* NetworkError.swift in Sources */,

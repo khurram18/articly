@@ -9,6 +9,7 @@
 import Foundation
 
 public protocol ArticleService {
+  
 func search(query: String, page: Int, completion: @escaping (Result<SearchResponse, Error>) -> Void)
   
 }

@@ -40,9 +40,3 @@ public var debugDescription: String {
 }
   
 }
-
-
-//switch self {
-//case .urlCreation:
-//  return "An error occurred."
-//}
