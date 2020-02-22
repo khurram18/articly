@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20BFCB3523FCFF2800A0E599"
-               BuildableName = "Articly.app"
-               BlueprintName = "Articly"
-               ReferencedContainer = "container:Articly.xcodeproj">
+               BlueprintIdentifier = "205DCC4923FD038600AD452A"
+               BuildableName = "NetworkClient.framework"
+               BlueprintName = "NetworkClient"
+               ReferencedContainer = "container:NetworkClient.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -27,36 +27,16 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES"
-      onlyGenerateCoverageForSpecifiedTargets = "YES">
-      <CodeCoverageTargets>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20BFCB3523FCFF2800A0E599"
-            BuildableName = "Articly.app"
-            BlueprintName = "Articly"
-            ReferencedContainer = "container:Articly.xcodeproj">
-         </BuildableReference>
-      </CodeCoverageTargets>
+      codeCoverageEnabled = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20BFCB4E23FCFF2900A0E599"
-               BuildableName = "ArticlyTests.xctest"
-               BlueprintName = "ArticlyTests"
-               ReferencedContainer = "container:Articly.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20BFCB5923FCFF2900A0E599"
-               BuildableName = "ArticlyUITests.xctest"
-               BlueprintName = "ArticlyUITests"
-               ReferencedContainer = "container:Articly.xcodeproj">
+               BlueprintIdentifier = "205DCC5223FD038700AD452A"
+               BuildableName = "NetworkClientTests.xctest"
+               BlueprintName = "NetworkClientTests"
+               ReferencedContainer = "container:NetworkClient.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,16 +51,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20BFCB3523FCFF2800A0E599"
-            BuildableName = "Articly.app"
-            BlueprintName = "Articly"
-            ReferencedContainer = "container:Articly.xcodeproj">
-         </BuildableReference>
-      </BuildableProductRunnable>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -88,16 +58,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20BFCB3523FCFF2800A0E599"
-            BuildableName = "Articly.app"
-            BlueprintName = "Articly"
-            ReferencedContainer = "container:Articly.xcodeproj">
+            BlueprintIdentifier = "205DCC4923FD038600AD452A"
+            BuildableName = "NetworkClient.framework"
+            BlueprintName = "NetworkClient"
+            ReferencedContainer = "container:NetworkClient.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
