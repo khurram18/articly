@@ -118,7 +118,7 @@ private func showLoadingIndicator(_ show: Bool) {
 }
   
 private func checkEmptyTableView() {
-  if tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) == 0 {
+  if tableView.dataSource?.tableView(tableView, numberOfRowsInSection: 0) == 0 && !(viewModel?.isLoading ?? false) {
     tableView.backgroundView = emptyView
   } else {
     tableView.backgroundView = nil
